@@ -1,0 +1,8 @@
+<li>
+	<%= tag.name %>
+	<ul>
+		<% tag.tags.each do |parent_tag| %>
+			<%= render partial: "tag", locals: { tag: parent_tag } %>
+		<% end %>
+	</ul>
+</li>

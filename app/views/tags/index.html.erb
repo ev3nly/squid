@@ -1,0 +1,9 @@
+<h1>Tags</h1>
+
+<%= @chain.to_a.map{ |tag| tag.name }.join(', ') %>
+
+<ul>
+	<% @tags.each do |tag| %>
+		<%= render partial: "tag", locals: { tag: tag } %>
+	<% end %>
+</ul>
