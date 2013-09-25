@@ -5,8 +5,8 @@ class Tag < ActiveRecord::Base
 
 	### ASSOCIATIONS:
 	
-	# Tagging.where(tag: self)
-	has_many :tagged_taggings, class_name: "Tagging"
+	# Tagging.where(tag: self), separate from Taggable associations
+	has_many :tagged_taggings, class_name: "Tagging", inverse_of: :tag
 
 	### VALIDATIONS:
 

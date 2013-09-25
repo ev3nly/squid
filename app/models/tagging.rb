@@ -2,7 +2,7 @@ class Tagging < ActiveRecord::Base
 
 	### ASSOCIATIONS:
 
-	belongs_to :tag
+	belongs_to :tag, inverse_of: :tagged_taggings
 	belongs_to :taggable, polymorphic: true
 
 	### VALIDATIONS:
