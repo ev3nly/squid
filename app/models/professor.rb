@@ -7,7 +7,6 @@ class Professor < ActiveRecord::Base
 
 	### VALIDATIONS
 
-	validates_presence_of :course_id
-	validates_presence_of :professor_id
+	validates_presence_of :name
 
 end

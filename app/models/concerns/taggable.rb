@@ -6,6 +6,11 @@ module Taggable
 		has_many :tags, through: :taggings
 	end
 
+	def tag_chain
+		chains = self.tags.map { |tag| Tag.tag_chain(tag) }
+		Set.new(chains.flatten).to_a
+	end
+
 	module ClassMethods
 		def tag_chain(tag)
 			chain = Set.new
@@ -18,7 +23,7 @@ module Taggable
 				end
 			end
 
-			return chain
+			return chain.to_a
 		end
 	end
 

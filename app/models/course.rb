@@ -23,5 +23,6 @@ class Course < ActiveRecord::Base
 	validates_presence_of :price
 	validates_presence_of :style
 	validates_presence_of :url
+	validates_presence_of :provider_id
 
 end
