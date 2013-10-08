@@ -3,10 +3,7 @@ Squid::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root "home#index"
-
-  get "search/:query" => "courses#search"
-  get "courses/:name" => "courses#show"
+  root "splash#index"
 
   resources :tags, only: [:index]
 

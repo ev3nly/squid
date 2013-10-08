@@ -11,45 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130925013936) do
+ActiveRecord::Schema.define(version: 20131008190908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
-
-  create_table "courses", force: true do |t|
-    t.string   "name",                                  null: false
-    t.string   "difficulty",                            null: false
-    t.decimal  "price",         precision: 8, scale: 2, null: false
-    t.string   "style",                                 null: false
-    t.integer  "time_quantity"
-    t.string   "time_unit"
-    t.string   "url",                                   null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "provider_id",                           null: false
-  end
-
-  add_index "courses", ["name"], name: "index_courses_on_name", using: :btree
-
-  create_table "professors", force: true do |t|
-    t.string   "name",       null: false
-    t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "professors", ["name"], name: "index_professors_on_name", using: :btree
-
-  create_table "providers", force: true do |t|
-    t.string   "name",       null: false
-    t.string   "url",        null: false
-    t.string   "style"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "providers", ["name"], name: "index_providers_on_name", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id",        null: false
@@ -67,14 +33,5 @@ ActiveRecord::Schema.define(version: 20130925013936) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "teachings", force: true do |t|
-    t.integer  "course_id",    null: false
-    t.integer  "professor_id", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "teachings", ["course_id", "professor_id"], name: "index_teachings_on_course_id_and_professor_id", using: :btree
 
 end
