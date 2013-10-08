@@ -4,6 +4,10 @@ Squid::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root "splash#index"
+  
+  get "/about"        => "splash#about"
+  get "/how-it-works" => "splash#how_it_works"
+  get "/contact"      => "splash#contact"
 
   resources :tags, only: [:index]
 
