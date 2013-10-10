@@ -6,7 +6,7 @@ Squid::Application.routes.draw do
   root "splash#index"
   
   get "/about"        => "splash#about"
-  get "/how-it-works" => "splash#how_it_works"
+  get "/how-it-works" => "splash#how_it_works", as: :how_it_works
   get "/contact"      => "splash#contact"
 
   resources :tags, only: [:index]
