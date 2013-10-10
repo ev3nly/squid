@@ -82,7 +82,7 @@
         </div>
       </div>
 
-      <div class="row body-bullet">
+      <div class="row body-bullet last-bullet">
         <div class="col-md-2"></div>
         <div class="col-md-4 body-image">
           <%= image_tag("splash-marketing/high_five_red.png", :alt => "High Five") %>
@@ -122,10 +122,16 @@
       </div>
       <div class="col-md-1"></div>
 
-      <div class="col-md-3">
-        <%= link_to "About", about_path %><br>
-        <%= link_to "How Lightning Works", about_path %><br>
-        <%= link_to "Contact", contact_path %><br>
+      <div class="col-md-3 footer-links">
+        <div class="footer-link">
+          <%= link_to "About", about_path %><br>
+        </div>
+        <div class="footer-link">
+          <%= link_to "How Lightning Works", how_it_works_path %><br>
+        </div>
+        <div class="footer-link">
+          <%= link_to "Contact", contact_path %><br>
+        </div>
       </div>
       <div class="col-md-1"></div>
       <div class="col-md-1">
