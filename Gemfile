@@ -11,6 +11,9 @@ gem 'rails_12factor'
 # Use PostgreSQL as the database for Active Record
 gem 'pg'
 
+# Facebook Authentication
+gem 'omniauth-facebook', '1.4.0'
+
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0'
 

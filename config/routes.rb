@@ -4,6 +4,10 @@ Squid::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root "splash#index"
+
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
   
   get "/about"        => "splash#about"
   get "/how-it-works" => "splash#how_it_works", as: :how_it_works
