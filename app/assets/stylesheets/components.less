@@ -1,4 +1,25 @@
-// @import "config";
+@import "config";
+
+.LogoHeader(@background-color, @text-color) {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background: @background-color;
+
+  h1 { 
+    text-align: center;
+    color: @text-color;
+    font-size: @very-big-font;
+    font-weight: 200;
+  }
+}
+
+.logo-header-light {
+  .LogoHeader(@light, @blue);
+}
+
+.logo-header-blue{
+  .LogoHeader(@blue, @light);
+}
 
 .btn-red {
   background: @red;

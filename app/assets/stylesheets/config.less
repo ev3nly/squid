@@ -8,6 +8,7 @@
 //Secondary Colors
 @dark-blue: #3C689F;
 @light-gray: #C8C8C8;
+@dark-gray: #9E9E9E;
 
 //Fonts
 @very-big-font: 3em;
@@ -15,3 +16,16 @@
 @medium-font: 2em;
 @small-font: 1.5em;
 @very-small-font: 1.2em;
+
+.TitleFont(@text-color) {
+  font-size: @medium-font;
+  text-align: left;
+  font-weight: 400;
+  color: @text-color;
+}
+
+.DescriptionFont(@text-color) {
+  font-size: @small-font;
+  font-weight: 200;
+  color: @text-color;
+}
