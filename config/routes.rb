@@ -9,6 +9,8 @@ Squid::Application.routes.draw do
   get "/how-it-works" => "splash#how_it_works"
   get "/contact"      => "splash#contact"
 
+  resources :users, only: :create
+
   resources :tags, only: [:index]
 
   # Example of regular route:
