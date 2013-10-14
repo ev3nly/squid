@@ -13,7 +13,7 @@ Squid::Application.routes.draw do
   get "/how-it-works" => "splash#how_it_works", as: :how_it_works
   get "/contact"      => "splash#contact"
 
-  resources :users, only: :create
+  get "/profile"      => "users#profile"
 
   resources :tags, only: [:index]
 
