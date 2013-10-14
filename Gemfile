@@ -14,6 +14,9 @@ gem 'pg'
 # Facebook Authentication
 gem 'omniauth-facebook', '1.4.0'
 
+# Facebook API usage
+gem "koala"
+
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0'
 
