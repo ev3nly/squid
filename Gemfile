@@ -38,6 +38,11 @@ gem 'jbuilder', '~> 1.2'
 # Pretty Printing in Rails Console
 gem 'hirb'
 
+group :development do
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

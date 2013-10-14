@@ -10,5 +10,10 @@
  *
  *= require_self
  *= require bootstrap
- *= require style
+ 
+ *= require config
+ *= require components
+
+ *= require splash
+ *= require about
  */
