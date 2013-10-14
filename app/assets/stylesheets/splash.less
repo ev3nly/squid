@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Less here: http://lesscss.org/
 
-// @import "config";
+@import "config";
 
 body {
   padding-top: 0px;
@@ -18,21 +18,9 @@ img {
 
 .splash {
 
-	h1 { 
-		text-align: center;
-    color: @blue;
-    font-size: @very-big-font;
-    font-weight: 200;
-	}
-
-  .splash-logo {
-    margin-top: 40px;
-    padding-bottom: 20px;
-    background: @light;
-  }
-
   .splash-header {
     background: @blue;
+    text-align: center;
 
     h1 {
       color: @light;
@@ -53,7 +41,6 @@ img {
       display: inline-block;
       margin: 50px 3%;
     }
-
   }
 
   .splash-marketing {
@@ -67,14 +54,11 @@ img {
     }
 
     h1 {
-      font-size: @medium-font;
-      text-align: left;
-      font-weight: 400;
+      .title-font(@blue);
     }
 
     h3 {
-      font-size: @small-font;
-      font-weight: 200;
+      .description-font(@blue);
     }
 
     img {
