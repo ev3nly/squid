@@ -10,4 +10,9 @@ class SignUpController < ApplicationController
     
   end
 
+  # GET /sign-up-completed
+  def completed
+
+  end
+
 end
