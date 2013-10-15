@@ -5,6 +5,9 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+# Server
+gem "thin", ">= 1.5.0"
+
 # Heroku support
 gem 'rails_12factor'
 
