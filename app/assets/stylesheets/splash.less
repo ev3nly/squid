@@ -1,0 +1,128 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Less here: http://lesscss.org/
+
+@import "config";
+
+body {
+  padding-top: 0px;
+  background: @light;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 200;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+.splash {
+
+  .splash-header {
+    background: @blue;
+    text-align: center;
+
+    h1 {
+      color: @light;
+      font-size: @big-font;
+    }
+
+    .splash-header-text {
+      padding-top: 20px;
+    }
+
+    .splash-header-sport-icon-container {
+      margin: -10px 5% -10px 5%;
+      text-align: center;
+    }
+
+    .splash-header-sport-icon {
+      text-align: center;
+      display: inline-block;
+      margin: 50px 3%;
+    }
+  }
+
+  .splash-marketing {
+    text-align: left;
+
+    h2 {
+      text-align: center;
+      color: @blue;
+      font-weight: 200;
+      font-size: @medium-font;
+    }
+
+    h1 {
+      .title-font(@blue);
+    }
+
+    h3 {
+      .description-font(@blue);
+    }
+
+    img {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .splash-marketing-main-header {
+      margin-top: 20px;
+      margin-bottom: -20px;
+    }
+
+    .splash-marketing-image {
+      display: table-cell;
+      vertical-align: middle;
+      margin: auto auto;
+      padding-top: 20px;
+    }
+
+    .splash-marketing-bullet {
+      padding: 17px;
+    }
+
+    .btn-red {
+      margin-top: 70px;
+    }
+
+    .splash-marketing-high-five {
+      margin-top: 10px;
+    }
+
+    .splash-marketing-last-bullet {
+      margin-bottom: 20px;
+    }    
+  }
+
+  .splash-share {
+    background: @blue;
+    text-align: center;
+
+
+    h1 {
+      color: @light;
+      font-size: @big-font;
+      font-weight: 200;
+    }
+
+    h2 {
+      color: @light;
+      font-size: @medium-font;
+      font-weight: 500;
+    }
+
+    .splash-share-row-1 {
+      padding-top: 10px;
+    }
+
+    .splash-share-row-2 {
+      margin-top: -20px;
+    }
+
+    .splash-share-button-row {
+      margin-top: 20px;
+      padding-bottom: 40px;
+    }
+  }
+}
