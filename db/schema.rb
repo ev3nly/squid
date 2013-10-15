@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131014184201) do
+ActiveRecord::Schema.define(version: 20131015200426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20131014184201) do
   create_table "activities", force: true do |t|
     t.string "name", null: false
   end
+
+  create_table "interests", force: true do |t|
+    t.integer "interesting_id",   null: false
+    t.string  "interesting_type", null: false
+    t.integer "interested_id",    null: false
+    t.string  "interested_type",  null: false
+    t.string  "level",            null: false
+  end
+
+  add_index "interests", ["interesting_id", "interesting_type", "interested_id", "interested_type", "level"], name: "index_interests_on_interested_and_interesting_and_level", unique: true, using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id",        null: false

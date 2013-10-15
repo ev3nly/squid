@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
 
 	### ASSOCIATIONS
 
+	has_many :interests, as: :interested
+	has_many :activities, through: :interests, source: :interesting, source_type: "Activity"
+
 	### VALIDATIONS
 
 	def self.from_omniauth(auth)
@@ -25,6 +28,15 @@ class User < ActiveRecord::Base
 	    user.facebook_token_expires_at = Time.now + extended_token_info["expires"].to_i
 	    user.save!
 	  end
+	end
+
+	def add_interest(activity, level)
+		Interest.find_or_create_by!(
+			interested_id: self.id,
+			interested_type: self.class.to_s,
+			interesting_id: activity.id,
+			interesting_type: activity.class.to_s,
+			level: level)
 	end
 
 end
