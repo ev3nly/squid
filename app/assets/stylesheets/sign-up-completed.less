@@ -1,4 +1,45 @@
+@import "config";
 
 .sign-up-completed {
-  
+  background: @light;
+
+  h1 {
+    .title-font(@red);
+  }
+
+  h2 {
+    .description-font(@red);
+  }
+
+  p {
+    padding-bottom: 10px;
+  }
+
+  img {
+    padding-top: 40px;
+    padding-left: 40px;
+  }
+
+  .sign-up-completed-top-text {
+    margin-bottom: -10px;
+  }
+
+  .sign-up-completed-estimated-wait-text {
+    color: @dark-gray;
+    margin-bottom: 20px;
+    float: left;
+  }
+
+  .sign-up-completed-estimated-wait-time {
+    color: @blue;
+    float: left;
+    padding-left: 6px;
+  }
+
+  .sign-up-completed-bottom-text {
+    color: @dark-gray;
+    margin-top: -10px;
+    margin-bottom: 40px;
+    float: left;
+  }
 }

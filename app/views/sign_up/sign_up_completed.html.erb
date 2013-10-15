@@ -1,0 +1,19 @@
+<%= render partial: "shared/logo_header", object: "light" %>
+
+<div class="row sign-up-completed">
+  <div class="col-md-2"></div>
+  <div class="col-md-6">
+    <h1>Thanks for applying!</h1><p>
+    <h2 class="sign-up-completed-top-text">Lightning is not yet available in your area, but it will be soon.</h2><p>
+      <h2 class="sign-up-completed-estimated-wait-text">Estimated wait:
+      <h2 class="sign-up-completed-estimated-wait-time">About 3-4 weeks</h2><br>
+      <h2 class="sign-up-completed-bottom-text">In the interim, our team will review your application and let you know if we have any questions.</h2>
+  </div>
+  <div class="col-md-2">
+    <%= image_tag("splash-marketing/marketing-high-five-gray.png", alt: "San Francisco Bridge") %>
+  </div>
+</div>
+
+<%= render partial: "shared/waitlist_share" %>
+
+<%= render partial: "shared/footer" %>
