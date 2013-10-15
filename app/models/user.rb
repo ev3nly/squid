@@ -30,12 +30,13 @@ class User < ActiveRecord::Base
 	  end
 	end
 
-	def add_interest_on_activity(activity)
+	def add_interest(activity, level)
 		Interest.find_or_create_by!(
 			interested_id: self.id,
 			interested_type: self.class.to_s,
 			interesting_id: activity.id,
-			interesting_type: activity.class.to_s)
+			interesting_type: activity.class.to_s,
+			level: level)
 	end
 
 end
