@@ -44,9 +44,17 @@
      }(document));
   </script>
 
-  <div class="container">
+  <% if @header_color == :light %>
+    <%= render partial: "shared/logo_header", object: "light" %>
+  <% else %>
+    <%= render partial: "shared/logo_header", object: "blue" %>
+  <% end %>
+
+  <div class="container full-width">
   	<%= yield %>
   </div>
+
+  <%= render partial: "shared/footer" %>
 
 </body>
 </html>
