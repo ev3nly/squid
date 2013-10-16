@@ -5,11 +5,20 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+# Server
+gem "thin", ">= 1.5.0"
+
 # Heroku support
 gem 'rails_12factor'
 
 # Use PostgreSQL as the database for Active Record
 gem 'pg'
+
+# Facebook Authentication
+gem 'omniauth-facebook', '1.4.0'
+
+# Facebook API usage
+gem "koala"
 
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0'
@@ -37,6 +46,11 @@ gem 'jbuilder', '~> 1.2'
 
 # Pretty Printing in Rails Console
 gem 'hirb'
+
+group :development do
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

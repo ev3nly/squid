@@ -11,11 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131008190908) do
+ActiveRecord::Schema.define(version: 20131015200426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+
+  create_table "activities", force: true do |t|
+    t.string "name", null: false
+  end
+
+  create_table "interests", force: true do |t|
+    t.integer "interesting_id",   null: false
+    t.string  "interesting_type", null: false
+    t.integer "interested_id",    null: false
+    t.string  "interested_type",  null: false
+    t.string  "level",            null: false
+  end
+
+  add_index "interests", ["interesting_id", "interesting_type", "interested_id", "interested_type", "level"], name: "index_interests_on_interested_and_interesting_and_level", unique: true, using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id",        null: false
@@ -32,6 +46,16 @@ ActiveRecord::Schema.define(version: 20131008190908) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name",                      null: false
+    t.string   "email"
+    t.string   "facebook_id",               null: false
+    t.string   "facebook_token",            null: false
+    t.string   "phone"
+    t.string   "profile_picture_url"
+    t.datetime "facebook_token_expires_at"
   end
 
 end
