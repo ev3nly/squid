@@ -9,10 +9,7 @@
 
   h2 {
     .description-font(@red);
-  }
-
-  p {
-    padding-bottom: 10px;
+    margin-top: 50px;
   }
 
   img {
@@ -20,26 +17,18 @@
     padding-left: 40px;
   }
 
-  .sign-up-completed-top-text {
-    margin-bottom: -10px;
-  }
-
   .sign-up-completed-estimated-wait-text {
-    color: @dark-gray;
-    margin-bottom: 20px;
-    float: left;
+    .description-font(@dark-gray);
+    margin-top: 30px;
   }
 
   .sign-up-completed-estimated-wait-time {
     color: @blue;
-    float: left;
     padding-left: 6px;
   }
 
   .sign-up-completed-bottom-text {
-    color: @dark-gray;
-    margin-top: -10px;
+    .description-font(@dark-gray);
     margin-bottom: 40px;
-    float: left;
   }
 }
