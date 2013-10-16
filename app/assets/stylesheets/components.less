@@ -1,4 +1,5 @@
 @import "config";
+@import "mixins";
 
 .logo-header(@background-color, @text-color) {
   padding-top: 40px;
@@ -14,7 +15,7 @@
 }
 
 .logo-header-light {
-  .logo-header(@light, @blue);
+  .logo-header(white, @blue);
 }
 
 .logo-header-blue{
@@ -42,8 +43,11 @@
 }
 
 .footer {
+  .bordered-top;
+
   padding-top: 20px;
   padding-bottom: 30px;
+  background: white;
 
   h2 {
     color: @light-gray;
@@ -61,6 +65,14 @@
 
   .footer-link {
     margin-bottom: 8px;
+    a {
+      color: @dark-gray;
+      font-weight: 400;
+    }
+
+    a:hover {
+      color: @light-gray;
+    }
   }
 
   .footer-logo {
