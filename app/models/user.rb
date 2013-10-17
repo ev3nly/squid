@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	# :facebook_token_expires_at
 	# :phone
 	# :profile_picture_url
+	# :referral_code
 
 	### ASSOCIATIONS
 
@@ -17,11 +18,22 @@ class User < ActiveRecord::Base
 
 	### VALIDATIONS
 
+	validates_presence_of :name
+	validates_presence_of :facebook_id, :facebook_token
+	validates_presence_of :referral_code
+	
+	validates_uniqueness_of :referral_code
+
+	### CALLBACKS
+
+	before_validation :make_referral_code
+
 	def self.from_omniauth(auth)
 	  where(facebook_id: auth.uid).first_or_initialize.tap do |user|
 	    # user.provider = auth.provider
 	    user.name = auth.info.name
 	    user.facebook_id = auth.uid
+	    user.email = auth.info.email
 	    # user.facebook_token = auth.credentials.token
 	    # user.facebook_token_expires_at = Time.at(auth.credentials.expires_at)
 	    @oauth = Koala::Facebook::OAuth.new(ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_SECRET"])
@@ -30,6 +42,17 @@ class User < ActiveRecord::Base
 	    user.facebook_token_expires_at = Time.now + extended_token_info["expires"].to_i
 	    user.save!
 	  end
+	end
+
+	def make_referral_code
+		return if self.referral_code
+		
+		code = name.gsub(" ", "-").downcase
+
+		count = User.where(name: self.name).count
+		code = "#{code}-#{count + 1}" if count > 0
+
+		self.referral_code = code
 	end
 
 	def add_interest(activity, level)

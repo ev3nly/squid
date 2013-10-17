@@ -18,27 +18,21 @@
     <div class="row sign-up-select-sports-sport-row">
       <div class="col-md-3"></div>
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "basketball", title: "Basketball" } %>
-
-       <%= render partial: "shared/select_sports_sport", locals: { class_name: "football", title: "Touch Football" } %>
-
-       <%= render partial: "shared/select_sports_sport", locals: { class_name: "whiffle", title: "Whiffle Ball" } %>
+      <%= render partial: "shared/select_sports_sport", locals: { class_name: "football", title: "Touch Football" } %>
+      <%= render partial: "shared/select_sports_sport", locals: { class_name: "whiffle", title: "Whiffle Ball" } %>
     </div>
 
     <div class="row sign-up-select-sports-sport-row">
       <div class="col-md-3"></div>
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "bowling", title: "Bowling" } %>
-
-       <%= render partial: "shared/select_sports_sport", locals: { class_name: "golf", title: "Golf" } %>
-
-       <%= render partial: "shared/select_sports_sport", locals: { class_name: "tennis", title: "Tennis" } %>
+      <%= render partial: "shared/select_sports_sport", locals: { class_name: "golf", title: "Golf" } %>
+      <%= render partial: "shared/select_sports_sport", locals: { class_name: "tennis", title: "Tennis" } %>
     </div>
 
     <div class="row sign-up-select-sports-sport-row">
       <div class="col-md-3"></div>
-       <%= render partial: "shared/select_sports_sport", locals: { class_name: "ultimate", title: "Ultimate Frisbee" } %>
-
-       <%= render partial: "shared/select_sports_sport", locals: { class_name: "soccer", title: "Soccer" } %>
-
+      <%= render partial: "shared/select_sports_sport", locals: { class_name: "ultimate", title: "Ultimate Frisbee" } %>
+      <%= render partial: "shared/select_sports_sport", locals: { class_name: "soccer", title: "Soccer" } %>
       <div class="col-md-2 sign-up-select-sports-form">
         <textarea class="form-control model-other-sports" placeholder="Add any other sports you'd like to play here (e.g. volleyball, hockey, bocce, etc.)" rows="5"></textarea>
       </div>
@@ -46,27 +40,33 @@
 
     <div class="sign-up-select-sports-personal-info">
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 page-header"></div>
+        <div class="col-md-8 col-md-offset-2 page-header"></div>
       </div>
 
       <div class="row sign-up-select-sports-personal-info-phone">
-        <div class="col-md-2"></div>
-        <div class="col-md-3">
-          <p class="cellphone">My cellphone number is
+        <div class="col-md-3 col-md-offset-3">
+          <p class="cellphone">My email is</p>
         </div>
         <div class="col-md-5">
-          <input type="text" class="form-control model-phone"></p>
+          <input type="text" class="form-control model-email" value="<%= @email || current_user.email %>">
+        </div>
+      </div>
+
+      <div class="row sign-up-select-sports-personal-info-phone">
+        <div class="col-md-3 col-md-offset-3">
+          <p class="cellphone">My cellphone number is</p>
+        </div>
+        <div class="col-md-5">
+          <input type="text" class="form-control model-phone" value="<%= @phone %>">
         </div>
       </div>
 
       <div class="row sign-up-select-sports-personal-info-location">
-        <div class="col-md-2"></div>
-        <div class="col-md-3">
-          <p class="cellphone">I live in
+        <div class="col-md-3 col-md-offset-3">
+          <p class="cellphone">I live in</p>
         </div>
         <div class="col-md-5">
-          <input type="text" class="form-control model-location"></p>
+          <input type="text" class="form-control model-location" value="<%= @location %>">
         </div>
       </div>
     </div>
@@ -94,3 +94,11 @@
     </div>
   </div>
 </div>
+
+<% if false && @sports %>
+  <script>
+    <% @sports.each do |sport| %>
+
+    <% end %>
+  </script>
+<% end %>

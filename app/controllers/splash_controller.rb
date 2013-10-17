@@ -11,6 +11,12 @@ class SplashController < ApplicationController
 		else
 			render template: "splash/index"
 		end
+
+		if params[:referral]
+			ref = Referral.where(code: params[:referral]).first_or_initialize
+			ref.visits += 1
+			ref.save!
+		end
 	end
 
 	# GET /about

@@ -72,10 +72,11 @@ $( document ).ready ->
     # console.log $(".model-phone").val()
     # console.log $(".model-location").val()
 
-    data = 
-    	location: 		$(".model-location").val()
-    	phone: 				$(".model-phone").val()
-    	other_sports: $(".model-other-sports").val()
+    data =
+      email:        $(".model-email").val()
+      location: 		$(".model-location").val()
+      phone: 				$(".model-phone").val()
+      other_sports: $(".model-other-sports").val()
 
     form = $(".select-sports-form")
     _.each data, (value, key) -> form.append("<input type='hidden' name='#{key}' id='#{key}' value='#{value}'/>")
