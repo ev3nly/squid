@@ -38,38 +38,47 @@
       </div>
     </div>
 
-    <div class="sign-up-select-sports-personal-info">
+    <div class="personal-info">
       <div class="row">
         <div class="col-md-8 col-md-offset-2 page-header"></div>
       </div>
 
-      <div class="row personal-info-input-group sign-up-select-sports-personal-info-email">
-        <div class="col-md-2 col-md-offset-3">
-          <p class="help-inline email">My email is</p>
+      <div class="row personal-info-input-group">
+        <div class="help-inline">
+          <p>My email is</p>
         </div>
-        <div class="col-md-3">
+        <div class="input-wrapper">
           <input type="text" class="form-control model-email" value="<%= @email || (current_user && current_user.email) %>">
         </div>
-        <div class="col-md-2">
-          <p class="alert-danger-text">You must enter a valid email</p>
+
+        <div class="error hidden email">
+          <p>Please enter a valid email</p>
         </div>
       </div>
 
-      <div class="row personal-info-input-group sign-up-select-sports-personal-info-phone">
-        <div class="col-md-3 col-md-offset-3">
-          <p class="help-inline cellphone">My cellphone number is</p>
+      <div class="row personal-info-input-group">
+        <div class="help-inline">
+          <p>My cellphone number is</p>
         </div>
-        <div class="col-md-5">
+        <div class="input-wrapper">
           <input type="text" class="form-control model-phone" value="<%= @phone %>">
         </div>
+
+        <div class="error hidden phone">
+          <p>Please enter a valid 10 digit US phone number</p>
+        </div>
       </div>
 
-      <div class="row personal-info-input-group sign-up-select-sports-personal-info-location">
-        <div class="col-md-3 col-md-offset-3">
-          <p class="help-inline location">I live in</p>
+      <div class="row personal-info-input-group">
+        <div class="help-inline">
+          <p>I live in</p>
         </div>
-        <div class="col-md-5">
+        <div class="input-wrapper">
           <input type="text" class="form-control model-location" value="<%= @location %>">
+        </div>
+
+        <div class="error hidden location">
+          <p>Please enter a US city</p>
         </div>
       </div>
     </div>

@@ -34,4 +34,9 @@ class SplashController < ApplicationController
 		@header_color = :blue
 	end
 
+	# GET /splash
+	def splash
+		render template: "splash/index"
+	end
+
 end

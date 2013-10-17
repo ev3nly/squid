@@ -39,11 +39,34 @@
     }
   }
 
-  .sign-up-select-sports-personal-info {
+  .personal-info {
 
     .personal-info-input-group {
+      margin-top: 20px;
+
       .help-inline {
+        .make-md-column(3);
+        .make-md-column-offset(2);
+
         text-align: right;
+      }
+
+      .input-wrapper {
+        .make-md-column(3);
+      }
+
+      .error {
+        .make-md-column(4);
+
+        p {
+          color: @red;
+          opacity: 1;
+          transition: 0.3s;
+        }
+
+        &.hidden {
+          opacity: 0;
+        }
       }
     }
 
@@ -51,22 +74,10 @@
       font-size: @very-small-font;
       color: @dark-gray;
     }
-
-    .form-control {
-      display: inline;
-    }
-
-    .sign-up-select-sports-personal-info-phone {
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
-    .sign-up-select-sports-personal-info-location {
-      margin-bottom: -20px;
-    }
   }
 
   .sign-up-select-sports-continue {
+    margin-top: -10px;
 
     .sign-up-select-sports-continue-button {
       margin-top: 20px;

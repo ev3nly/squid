@@ -57,9 +57,11 @@ $( document ).ready ->
       else
         toggleSport("#{sport}:#{level}")
 
-    console.log window.selectedSports
-    console.log numberOfSports()
-    $(".select-sports-count").text("#{numberOfSports()} sports selected!")
+    if (numberOfSports() == 0) 
+      $(".select-sports-count").text("")
+    else
+      sportsString = if (numberOfSports() > 1) then "sports" else "sport"
+      $(".select-sports-count").text("#{numberOfSports()} #{sportsString} selected!")
 
   $(".sign-up-select-sports .sport")
     .mouseenter (event) -> 
@@ -72,6 +74,28 @@ $( document ).ready ->
     location = $(".model-location").val()
     phone = $(".model-phone").val()
     otherSports = $(".model-other-sports").val()
+
+    error = false
+
+    if not email
+      $(".error.email").removeClass("hidden")
+      error = true
+    else
+      $(".error.email").addClass("hidden")
+
+    if not location
+      $(".error.location").removeClass("hidden")
+      error = true
+    else
+      $(".error.location").addClass("hidden")
+
+    if not phone
+      $(".error.phone").removeClass("hidden")
+      error = true
+    else
+      $(".error.phone").addClass("hidden")
+
+    return if error
 
     data =
       email:        email
