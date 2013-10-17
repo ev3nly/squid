@@ -10,6 +10,9 @@
  *
  *= require_self
 
+ *= require bs-variables
+ *= require bs-mixins
+
  *= require mixins
  *= require config
  *= require components

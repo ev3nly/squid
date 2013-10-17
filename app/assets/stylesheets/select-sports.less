@@ -32,33 +32,52 @@
 
     textarea {
       resize: none;
-      margin-top: 10px;
+      margin-top: 25px;
+      margin-left: 15px;
+      width: 150px;
+      height: 110px;
     }
   }
 
-  .sign-up-select-sports-personal-info {
+  .personal-info {
+
+    .personal-info-input-group {
+      margin-top: 20px;
+
+      .help-inline {
+        .make-md-column(3);
+        .make-md-column-offset(2);
+
+        text-align: right;
+      }
+
+      .input-wrapper {
+        .make-md-column(3);
+      }
+
+      .error {
+        .make-md-column(4);
+
+        p {
+          color: @red;
+          opacity: 1;
+          transition: 0.3s;
+        }
+
+        &.hidden {
+          opacity: 0;
+        }
+      }
+    }
 
     p {
       font-size: @very-small-font;
       color: @dark-gray;
     }
-
-    .form-control {
-      display: inline;
-      width: 60%;
-    }
-
-    .sign-up-select-sports-personal-info-phone {
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
-    .sign-up-select-sports-personal-info-location {
-      margin-bottom: -20px;
-    }
   }
 
   .sign-up-select-sports-continue {
+    margin-top: -10px;
 
     .sign-up-select-sports-continue-button {
       margin-top: 20px;
@@ -74,7 +93,16 @@
 
   .sport {
     cursor: pointer;
-    margin: 10px;
+
+    h2 {
+      color: @dark-gray;
+      transition: .5s;
+    }
+
+    &.selected h2 {
+      color: @blue;
+      transition: 0.3s;
+    }
 
     .sport-image {
       width: 58px;
@@ -83,26 +111,32 @@
       background: red;
     }
 
-    @selector-size: 130px;
+    @selector-height: 100px;
+    @selector-width: 110px;
 
     .sport-level-selector {
       .bordered;
 
-      visibility: hidden;
+      opacity: 0;
 
       background: white;
-      width: @selector-size;
-      height: @selector-size;
-      margin-top: -110px;
+      width: @selector-width;
+      height: @selector-height;
+      margin-top: -75px;
       margin-left: auto;
       margin-right: auto;
+      transition: 0.3s;
+
+      &.selected {
+        opacity: 0.9;
+      }
 
       button.btn {
         .rounded-corners(0);
         background: white;
         color: @blue;
-        width: @selector-size;
-        height: @selector-size / 3;
+        width: @selector-width;
+        height: @selector-height / 3;
       }
 
       button.btn:hover {

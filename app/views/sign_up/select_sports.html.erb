@@ -34,39 +34,51 @@
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "ultimate", title: "Ultimate Frisbee" } %>
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "soccer", title: "Soccer" } %>
       <div class="col-md-2 sign-up-select-sports-form">
-        <textarea class="form-control model-other-sports" placeholder="Add any other sports you'd like to play here (e.g. volleyball, hockey, bocce, etc.)" rows="5"></textarea>
+        <textarea class="form-control model-other-sports" placeholder="Add any other sports you'd like to play here (e.g. volleyball, hockey, bocce, etc.)" rows="4"></textarea>
       </div>
     </div>
 
-    <div class="sign-up-select-sports-personal-info">
+    <div class="personal-info">
       <div class="row">
         <div class="col-md-8 col-md-offset-2 page-header"></div>
       </div>
 
-      <div class="row sign-up-select-sports-personal-info-phone">
-        <div class="col-md-3 col-md-offset-3">
-          <p class="cellphone">My email is</p>
+      <div class="row personal-info-input-group">
+        <div class="help-inline">
+          <p>My email is</p>
         </div>
-        <div class="col-md-5">
-          <input type="text" class="form-control model-email" value="<%= @email || current_user.email %>">
+        <div class="input-wrapper">
+          <input type="text" class="form-control model-email" value="<%= @email || (current_user && current_user.email) %>">
+        </div>
+
+        <div class="error hidden email">
+          <p>Please enter a valid email</p>
         </div>
       </div>
 
-      <div class="row sign-up-select-sports-personal-info-phone">
-        <div class="col-md-3 col-md-offset-3">
-          <p class="cellphone">My cellphone number is</p>
+      <div class="row personal-info-input-group">
+        <div class="help-inline">
+          <p>My cellphone number is</p>
         </div>
-        <div class="col-md-5">
+        <div class="input-wrapper">
           <input type="text" class="form-control model-phone" value="<%= @phone %>">
         </div>
+
+        <div class="error hidden phone">
+          <p>Please enter a valid 10 digit US phone number</p>
+        </div>
       </div>
 
-      <div class="row sign-up-select-sports-personal-info-location">
-        <div class="col-md-3 col-md-offset-3">
-          <p class="cellphone">I live in</p>
+      <div class="row personal-info-input-group">
+        <div class="help-inline">
+          <p>I live in</p>
         </div>
-        <div class="col-md-5">
+        <div class="input-wrapper">
           <input type="text" class="form-control model-location" value="<%= @location %>">
+        </div>
+
+        <div class="error hidden location">
+          <p>Please enter a US city</p>
         </div>
       </div>
     </div>
@@ -74,8 +86,7 @@
     <div class="sign-up-select-sports-continue">
 
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 page-header"></div>
+        <div class="col-md-8 col-md-offset-2 page-header"></div>
       </div>
 
       <div class="row sign-up-select-sports-continue-button">

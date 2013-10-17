@@ -57,26 +57,51 @@ $( document ).ready ->
       else
         toggleSport("#{sport}:#{level}")
 
-    console.log window.selectedSports
-    console.log numberOfSports()
-    $(".select-sports-count").text("#{numberOfSports()} sports selected!")
+    if (numberOfSports() == 0) 
+      $(".select-sports-count").text("")
+    else
+      sportsString = if (numberOfSports() > 1) then "sports" else "sport"
+      $(".select-sports-count").text("#{numberOfSports()} #{sportsString} selected!")
 
   $(".sign-up-select-sports .sport")
     .mouseenter (event) -> 
-      $("##{this.id} .sport-level-selector").css("visibility", "visible")
+      $("##{this.id} .sport-level-selector").addClass("selected")
     .mouseleave (event) -> 
-      $("##{this.id} .sport-level-selector").css("visibility", "hidden")
+     $("##{this.id} .sport-level-selector").removeClass("selected")
 
   $(".select-sports-submit").click (event) ->
-    # console.log $(".model-other-sports").val()
-    # console.log $(".model-phone").val()
-    # console.log $(".model-location").val()
+    email = $(".model-email").val()
+    location = $(".model-location").val()
+    phone = $(".model-phone").val()
+    otherSports = $(".model-other-sports").val()
+
+    error = false
+
+    if not email
+      $(".error.email").removeClass("hidden")
+      error = true
+    else
+      $(".error.email").addClass("hidden")
+
+    if not location
+      $(".error.location").removeClass("hidden")
+      error = true
+    else
+      $(".error.location").addClass("hidden")
+
+    if not phone
+      $(".error.phone").removeClass("hidden")
+      error = true
+    else
+      $(".error.phone").addClass("hidden")
+
+    return if error
 
     data =
-      email:        $(".model-email").val()
-      location: 		$(".model-location").val()
-      phone: 				$(".model-phone").val()
-      other_sports: $(".model-other-sports").val()
+      email:        email
+      location: 		location
+      phone: 				phone
+      other_sports: otherSports
 
     form = $(".select-sports-form")
     _.each data, (value, key) -> form.append("<input type='hidden' name='#{key}' id='#{key}' value='#{value}'/>")

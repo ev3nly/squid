@@ -15,10 +15,13 @@ Squid::Application.routes.draw do
 
   post "/sign-up" 					=> "sign_up#sign_up"
 
-  # get "/select-sports"      => "sign_up#select_sports", as: :select_sports
-  # get "/home"               => "sign_up#waiting"
-  # get "/sign-up-completed"  => "sign_up#sign_up_completed", as: :sign_up_completed
-
+  if Rails.env.development?
+    get "/select-sports"      => "sign_up#select_sports", as: :select_sports
+    get "/home"               => "sign_up#waiting"
+    get "/sign-up-completed"  => "sign_up#sign_up_completed", as: :sign_up_completed
+    get "/splash"             => "splash#splash"
+  end
+  
   resources :tags, only: [:index]
 
   # Example of regular route:
