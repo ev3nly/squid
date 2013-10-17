@@ -1,21 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Squid</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
+  <title>Lightning</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script>
+    // Additional JS functions here
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '733657786650697', // App ID
+        channelUrl : '//localhost:3000/channel.html', // Channel File
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
 
-<div class="container">
+      // Additional init code here
+      FB.Event.subscribe('auth.authResponseChange', function(response) {
+        // Here we specify what we do with the response anytime this event occurs. 
+        if (response.status === 'connected') {
+          console.log("connected");
+          fbConnected();
+        } else if (response.status === 'not_authorized') {
+          console.log("not_authorized");
+        } else {
+          console.log("not logged in");
+        }
+      });
+    };
+
+    // Load the SDK asynchronously
+    (function(d){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/en_US/all.js";
+       ref.parentNode.insertBefore(js, ref);
+     }(document));
+  </script>
+
+  <% if current_user %>
+    <script>
+      window.referralCode = '<%= "#{root_url}?referral=#{current_user.referral_code}" %>';
+    </script>
+  <% else %>
+    <script>
+      window.referralCode = '<%= root_url %>';
+    </script>
+  <% end %>
+
+  <% if @header_color == :light %>
+    <%= render partial: "shared/logo_header", object: "light" %>
+  <% else %>
+    <%= render partial: "shared/logo_header", object: "blue" %>
+  <% end %>
+  
 	<%= yield %>
-</div>
+
+  <%= render partial: "shared/footer" %>
 
 </body>
 </html>

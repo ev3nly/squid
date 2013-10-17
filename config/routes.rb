@@ -4,11 +4,24 @@ Squid::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root "splash#index"
+
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
   
   get "/about"        => "splash#about"
-  get "/how-it-works" => "splash#how_it_works"
-  get "/contact"      => "splash#contact"
+  get "/how-it-works" => "splash#how_it_works", as: :how_it_works
+  # get "/contact"      => "splash#contact"
 
+  post "/sign-up" 					=> "sign_up#sign_up"
+
+  if Rails.env.development?
+    get "/select-sports"      => "sign_up#select_sports", as: :select_sports
+    get "/home"               => "sign_up#waiting"
+    get "/sign-up-completed"  => "sign_up#sign_up_completed", as: :sign_up_completed
+    get "/splash"             => "splash#splash"
+  end
+  
   resources :tags, only: [:index]
 
   # Example of regular route:

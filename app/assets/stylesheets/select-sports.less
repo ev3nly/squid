@@ -1,0 +1,175 @@
+@import "config";
+@import "mixins";
+
+.sign-up-select-sports {
+  background: @light;
+
+	.alert {
+		margin-top: 20px;
+	}
+
+  h1 {
+    .title-font(@red);
+    text-align: center;
+  }
+
+  .sign-up-select-sports-instructions {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .sign-up-select-sports-sport-row {
+    text-align: center;
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: @very-small-font;
+      font-weight: 500;
+      color: @blue;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      resize: none;
+      margin-top: 25px;
+      margin-left: 15px;
+      width: 150px;
+      height: 110px;
+    }
+  }
+
+  .personal-info {
+
+    .personal-info-input-group {
+      margin-top: 20px;
+
+      .help-inline {
+        .make-md-column(3);
+        .make-md-column-offset(2);
+
+        text-align: right;
+      }
+
+      .input-wrapper {
+        .make-md-column(3);
+      }
+
+      .error {
+        .make-md-column(4);
+
+        p {
+          color: @red;
+          opacity: 1;
+          transition: 0.3s;
+        }
+
+        &.hidden {
+          opacity: 0;
+        }
+      }
+    }
+
+    p {
+      font-size: @very-small-font;
+      color: @dark-gray;
+    }
+  }
+
+  .sign-up-select-sports-continue {
+    margin-top: -10px;
+
+    .sign-up-select-sports-continue-button {
+      margin-top: 20px;
+    }
+
+    h4 {
+      text-align: center;
+      color: @red;
+      margin-top: -20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  .sport {
+    cursor: pointer;
+
+    h2 {
+      color: @dark-gray;
+      transition: .5s;
+    }
+
+    &.selected h2 {
+      color: @blue;
+      transition: 0.3s;
+    }
+
+    .sport-image {
+      width: 58px;
+      height: 58px;
+      display: inline-block;
+      background: red;
+    }
+
+    @selector-height: 100px;
+    @selector-width: 110px;
+
+    .sport-level-selector {
+      .bordered;
+
+      opacity: 0;
+
+      background: white;
+      width: @selector-width;
+      height: @selector-height;
+      margin-top: -75px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: 0.3s;
+
+      &.selected {
+        opacity: 0.9;
+      }
+
+      button.btn {
+        .rounded-corners(0);
+        background: white;
+        color: @blue;
+        width: @selector-width;
+        height: @selector-height / 3;
+      }
+
+      button.btn:hover {
+        background: @light-gray;
+        color: white;
+      }
+
+      button.btn:active {
+        background: @blue;
+        color: white;
+      }
+
+      button.btn.selected {
+        background: @blue;
+        color: white;
+      }
+    }
+  }
+
+  #basketball .sport-image            { .image-content-fill("sports-icons/basketball-icon-gray.png"); }
+  #football .sport-image              { .image-content-fill("sports-icons/football-icon-gray.png"); }
+  #whiffle .sport-image               { .image-content-fill("sports-icons/whiffle-icon-gray.png"); }
+  #bowling .sport-image               { .image-content-fill("sports-icons/bowling-icon-gray.png"); }
+  #golf .sport-image                  { .image-content-fill("sports-icons/golf-icon-gray.png"); }
+  #tennis .sport-image                { .image-content-fill("sports-icons/tennis-icon-gray.png"); }
+  #ultimate .sport-image              { .image-content-fill("sports-icons/ultimate-icon-gray.png"); }
+  #soccer .sport-image                { .image-content-fill("sports-icons/soccer-icon-gray.png"); }
+  #basketball.selected .sport-image   { .image-content-fill("sports-icons/basketball-icon-light-blue.png"); }
+  #football.selected .sport-image     { .image-content-fill("sports-icons/football-icon-light-blue.png"); }
+  #whiffle.selected .sport-image      { .image-content-fill("sports-icons/whiffle-icon-light-blue.png"); }
+  #bowling.selected .sport-image      { .image-content-fill("sports-icons/bowling-icon-light-blue.png"); }
+  #golf.selected .sport-image         { .image-content-fill("sports-icons/golf-icon-light-blue.png"); }
+  #tennis.selected .sport-image       { .image-content-fill("sports-icons/tennis-icon-light-blue.png"); }
+  #ultimate.selected .sport-image     { .image-content-fill("sports-icons/ultimate-icon-light-blue.png"); }
+  #soccer.selected .sport-image       { .image-content-fill("sports-icons/soccer-icon-light-blue.png"); }
+}

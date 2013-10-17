@@ -9,5 +9,17 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+
+ *= require bs-variables
+ *= require bs-mixins
+
+ *= require mixins
+ *= require config
+ *= require components
+
+ *= require splash
+ *= require about
+ *= require how-it-works
+ *= require select-sports
+ *= require sign-up-completed
  */

@@ -1,3 +1,94 @@
-<h1>
-	SPLASH
-</h1>
+<div class="splash">
+  <div class="splash-header">
+    <div class="container">
+      <div class="splash-header-text">
+        <h1>We're a social club that organizes<br>weekly sports across your city</h1>
+      </div>
+
+      <div class="row splash-header-sport-icon-container">
+        <div class="splash-header-sport-icon">
+          <%= image_tag("sports-icons/basketball-icon-dark-blue.png", alt: "play basketball") %>
+        </div>
+        <div class="splash-header-sport-icon">
+          <%= image_tag("sports-icons/golf-icon-dark-blue.png", alt: "play golf") %>
+        </div>
+        <div class="splash-header-sport-icon">
+          <%= image_tag("sports-icons/football-icon-dark-blue.png", alt: "play football") %>
+        </div>
+        <div class="splash-header-sport-icon">
+          <%= image_tag("sports-icons/bowling-icon-dark-blue.png", alt: "play bowling") %>
+        </div>
+        <div class="splash-header-sport-icon">
+          <%= image_tag("sports-icons/whiffle-icon-dark-blue.png", alt: "play whiffleball") %>
+        </div>
+        <div class="splash-header-sport-icon">
+          <%= image_tag("sports-icons/tennis-icon-dark-blue.png", alt: "play tennis") %>
+        </div>
+        <div class="splash-header-sport-icon">
+          <%= image_tag("sports-icons/ultimate-icon-dark-blue.png", alt: "play ultimate frisbee") %>
+        </div>
+        <div class="splash-header-sport-icon">
+          <%= image_tag("sports-icons/soccer-icon-dark-blue.png", alt: "play soccer") %>
+        </div>
+      </div>
+
+      <div class="row">
+        <button type="button" class="btn btn-embossed btn-red btn-fb">Apply For Membership</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="splash-marketing">
+    <div class="container">
+      <div class="row splash-marketing-main-header">
+        <h2>Play your favorite sports when you'd like,<br> meet amazing people</h2>
+      </div>
+
+      <div class="row splash-marketing-bullet">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 splash-marketing-image">
+          <h1>Apply with Facebook</h1>
+          <h3>and answer a few questions, so we can make sure you're playing with the right people.</h3>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-embossed btn-red btn-fb">Apply For Membership</button>
+        </div>
+      </div>
+
+      <div class="row splash-marketing-bullet">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 splash-marketing-image">
+          <%= image_tag("splash-marketing/marketing-calendar.png", alt: "Calendar") %>
+        </div>
+        <div class="col-md-4">
+          <h1>We personally match you</h1>
+          <h3>with players of similar talent and that you don't yet know, but should.</h3>
+        </div>
+      </div>
+
+      <div class="row splash-marketing-bullet">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <h1>Only pay when you play</h1>
+          <h3>We'll email you each week so you can let us know when you're free.</h3>
+        </div>
+        <div class="col-md-4 splash-marketing-image">
+          <%= image_tag("splash-marketing/marketing-match.png", alt: "Match") %>
+        </div>
+      </div>
+
+      <div class="row splash-marketing-bullet splash-marketing-last-bullet">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 splash-marketing-image splash-marketing-high-five">
+          <%= image_tag("splash-marketing/marketing-high-five-red.png", alt: "High Five") %>
+        </div>        
+        <div class="col-md-4">
+          <h1>Show up and enjoy</h1>
+          <h3>We organize everything. You just need to show up and bring your 'A' game.</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render partial: "shared/waitlist_share", locals: { title: "Bring Lightning to your city faster", body: "Tell your friends" } %>
+</div>

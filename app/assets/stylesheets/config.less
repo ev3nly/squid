@@ -1,0 +1,65 @@
+//Main Colors
+@blue: #0085D6;
+@green: #08C0AD;
+@dark: #242D32;
+@light: #F9F7F6;
+@red: #FF6950;
+@white: #FFFFFF;
+
+@lightning-blue: @blue;
+@electric-blue: #A0FFC6;
+@electric-yellow: #FFFB05;
+
+//Secondary Colors
+@dark-blue: #3C689F;
+@light-gray: #C8C8C8;
+@dark-gray: #9E9E9E;
+@very-light-gray: #DDDDDD;
+@border-color: @very-light-gray;
+
+//Fonts
+@very-big-font: 3em;
+@big-font: 2.5em;
+@medium-font: 2em;
+@small-font: 1.6em;
+@very-small-font: 1.2em;
+@very-very-small-font: 0.8em;
+
+.title-font(@text-color) {
+  font-size: @medium-font;
+  text-align: left;
+  font-weight: 400;
+  color: @text-color;
+}
+
+.description-font(@text-color) {
+  font-size: @small-font;
+  font-weight: 200;
+  color: @text-color;
+}
+
+.page-header {
+  border-bottom-color: @border-color;
+}
+
+.alert {
+	p {
+		text-align: center;
+	}
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+body {
+  padding-top: 0px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 200;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
