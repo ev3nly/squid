@@ -80,7 +80,10 @@
 
       <div class="row sign-up-select-sports-continue-button">
       	<%= form_tag("/sign-up", method: "post", class: "select-sports-form") do %>
-      		<button type="button" class="btn btn-red select-sports-submit" data-loading-text="Submitting...">Continue</button>
+      		<button type="button" class="btn btn-lg btn-embossed btn-red select-sports-submit" data-loading-text="Submitting...">
+            <i class="icon-bolt icon-large"></i>
+             Continue
+          </button>
     		<% end %>
       </div>
 
