@@ -68,7 +68,19 @@ $( document ).ready ->
       $("##{this.id} .sport-level-selector").css("visibility", "hidden")
 
   $(".select-sports-submit").click (event) ->
-    console.log window.selectedSports
-    console.log $(".model-other-sports").val()
-    console.log $(".model-phone").val()
-    console.log $(".model-location").val()
+    # console.log $(".model-other-sports").val()
+    # console.log $(".model-phone").val()
+    # console.log $(".model-location").val()
+
+    data =
+      email:        $(".model-email").val()
+      location: 		$(".model-location").val()
+      phone: 				$(".model-phone").val()
+      other_sports: $(".model-other-sports").val()
+
+    form = $(".select-sports-form")
+    _.each data, (value, key) -> form.append("<input type='hidden' name='#{key}' id='#{key}' value='#{value}'/>")
+    _.each window.selectedSports, (value, sportKey) -> form.append("<input type='hidden' name='sports[]' id='sports[]' value='#{sportKey}'/>")
+    form.submit()
+
+    $(".select-sports-submit").button("loading")

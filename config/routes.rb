@@ -11,11 +11,13 @@ Squid::Application.routes.draw do
   
   get "/about"        => "splash#about"
   get "/how-it-works" => "splash#how_it_works", as: :how_it_works
-  get "/contact"      => "splash#contact"
+  # get "/contact"      => "splash#contact"
 
-  get "/select-sports"      => "sign_up#select_sports", as: :select_sports
-  get "/home"               => "sign_up#waiting"
-  get "/sign-up-completed"  => "sign_up#sign_up_completed", as: :sign_up_completed
+  post "/sign-up" 					=> "sign_up#sign_up"
+
+  # get "/select-sports"      => "sign_up#select_sports", as: :select_sports
+  # get "/home"               => "sign_up#waiting"
+  # get "/sign-up-completed"  => "sign_up#sign_up_completed", as: :sign_up_completed
 
   resources :tags, only: [:index]
 

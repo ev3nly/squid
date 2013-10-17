@@ -108,11 +108,17 @@
 }
 
 .image-content-fill(@path) {
-  background: url(@path) no-repeat;
+  background: image-url(@path) no-repeat;
   background-size: 100%;
 }
 
 .black-and-bold() {
   color: @black;
   font-weight: bold;
+}
+
+.box-shadow(@properties) {
+  -webkit-box-shadow: @properties;
+     -moz-box-shadow: @properties;
+          box-shadow: @properties;
 }

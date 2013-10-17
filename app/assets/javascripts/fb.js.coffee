@@ -6,6 +6,7 @@ window.fbConnected = ->
 $( document ).ready ->
   $(".btn-fb").click ->
     FB.getLoginStatus (response) ->
-      FB.login (response) ->
-        console.log "connected 2!"
-        window.location = "/auth/facebook/callback?#{$.param({ signed_request: response.authResponse.signedRequest })}" if response.authResponse
+    	window.location = "/auth/facebook"
+      # FB.login (response) ->
+      #   console.log "connected 2!"
+      #   window.location = "/auth/facebook/callback?#{$.param({ signed_request: response.authResponse.signedRequest })}" if response.authResponse
