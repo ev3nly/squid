@@ -5,47 +5,31 @@
     </div>
 
     <div class="row sign-up-select-sports-sport-row">
-      <div class="col-md-2"></div>
-      <div class="col-md-2 sign-up-select-sports-selection-sport">
-        <h2>Basketball</h2>
-        <%= image_tag("sports-icons/basketball-icon-light-blue.png", alt: "Basketball") %>
-      </div>
+      <div class="col-md-3"></div>
+      <%= render partial: "shared/select_sports_sport", locals: { class_name: "basketball", title: "Basketball" } %>
 
-      <div class="col-md-2 sign-up-select-sports-selection-sport">
-        <h2>Touch Football</h2>
-        <%= image_tag("sports-icons/football-icon-light-blue.png", alt: "Touch Football") %>
-      </div>
+       <%= render partial: "shared/select_sports_sport", locals: { class_name: "football", title: "Touch Football" } %>
 
-      <div class="col-md-2 sign-up-select-sports-selection-sport">
-        <h2>Whiffle Ball</h2>
-        <%= image_tag("sports-icons/baseball-icon-light-blue.png", alt: "Whiffle Ball") %>
-      </div>
-
-      <div class="col-md-2 sign-up-select-sports-selection-sport">
-        <h2>Bowling</h2>
-        <%= image_tag("sports-icons/bowling-icon-light-blue.png", alt: "Bowling") %>
-      </div>
+       <%= render partial: "shared/select_sports_sport", locals: { class_name: "whiffle", title: "Whiffle Ball" } %>
     </div>
 
     <div class="row sign-up-select-sports-sport-row">
-      <div class="col-md-2"></div>
-      <div class="col-md-2 sign-up-select-sports-selection-sport">
-        <h2>Golf</h2>
-        <%= image_tag("sports-icons/golf-icon-light-blue.png", alt: "Golf") %>
-      </div>
+      <div class="col-md-3"></div>
+      <%= render partial: "shared/select_sports_sport", locals: { class_name: "bowling", title: "Bowling" } %>
 
-      <div class="col-md-2 sign-up-select-sports-selection-sport">
-        <h2>Tennis</h2>
-        <%= image_tag("sports-icons/tennis-icon-light-blue.png", alt: "Tennis") %>
-      </div>
+       <%= render partial: "shared/select_sports_sport", locals: { class_name: "golf", title: "Golf" } %>
 
-      <div class="col-md-2 sign-up-select-sports-selection-sport">
-        <h2>Soccer</h2>
-        <%= image_tag("sports-icons/soccer-icon-light-blue.png", alt: "Soccer") %>
-      </div>
+       <%= render partial: "shared/select_sports_sport", locals: { class_name: "tennis", title: "Tennis" } %>
+    </div>
 
-      <div class="col-md-2 sign-up-select-sports-selection-sport">
-        <h4>Add any other sports you'd like to play here (e.g. volleyball, hockey, bocce, etc.)</h2>
+    <div class="row sign-up-select-sports-sport-row">
+      <div class="col-md-3"></div>
+       <%= render partial: "shared/select_sports_sport", locals: { class_name: "ultimate", title: "Ultimate Frisbee" } %>
+
+       <%= render partial: "shared/select_sports_sport", locals: { class_name: "soccer", title: "Soccer" } %>
+
+      <div class="col-md-2 sign-up-select-sports-form">
+        <textarea class="form-control model-other-sports" placeholder="Add any other sports you'd like to play here (e.g. volleyball, hockey, bocce, etc.)" rows="5"></textarea>
       </div>
     </div>
 
@@ -55,17 +39,23 @@
         <div class="col-md-8 page-header"></div>
       </div>
 
-      <div class="row">
+      <div class="row sign-up-select-sports-personal-info-phone">
         <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <h3>My cellphone number is</h3>
+        <div class="col-md-3">
+          <p class="cellphone">My cellphone number is
+        </div>
+        <div class="col-md-5">
+          <input type="text" class="form-control model-phone"></p>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row sign-up-select-sports-personal-info-location">
         <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <h3>I live in</h3>
+        <div class="col-md-3">
+          <p class="cellphone">I live in
+        </div>
+        <div class="col-md-5">
+          <input type="text" class="form-control model-location"></p>
         </div>
       </div>
     </div>
@@ -77,12 +67,12 @@
         <div class="col-md-8 page-header"></div>
       </div>
 
-      <div class="row">
-        <button type="button" class="btn btn-red">Continue</button>
+      <div class="row sign-up-select-sports-continue-button">
+        <button type="button" class="btn btn-red select-sports-submit">Continue</button>
       </div>
 
       <div class="row">
-        <h4>5 sports selected!</h4>
+        <h4 class="select-sports-count"></h4>
       </div>
 
     </div>
