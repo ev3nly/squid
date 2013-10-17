@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 	has_many :interests, as: :interested
 	has_many :activities, through: :interests, source: :interesting, source_type: "Activity"
 
+	has_many :suggestions, inverse_of: :user
+
 	### VALIDATIONS
 
 	def self.from_omniauth(auth)
@@ -31,12 +33,24 @@ class User < ActiveRecord::Base
 	end
 
 	def add_interest(activity, level)
-		Interest.find_or_create_by!(
+		interest = Interest.where(
 			interested_id: self.id,
 			interested_type: self.class.to_s,
 			interesting_id: activity.id,
-			interesting_type: activity.class.to_s,
-			level: level)
+			interesting_type: activity.class.to_s).first_or_initialize
+		interest.send :"#{level}=", true
+		interest.save!
+	end
+
+	def phone=(value)
+		return if value.nil?
+		value.gsub!(/\D/, '')
+    value.slice!("1") if value[0, 1] == "1"
+		super(value)
+	end
+
+	def finished_signing_up?
+		!self.phone.blank? && !self.location.blank?
 	end
 
 end
