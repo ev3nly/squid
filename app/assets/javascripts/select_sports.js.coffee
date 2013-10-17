@@ -63,20 +63,21 @@ $( document ).ready ->
 
   $(".sign-up-select-sports .sport")
     .mouseenter (event) -> 
-      $("##{this.id} .sport-level-selector").css("visibility", "visible")
+      $("##{this.id} .sport-level-selector").addClass("selected")
     .mouseleave (event) -> 
-      $("##{this.id} .sport-level-selector").css("visibility", "hidden")
+     $("##{this.id} .sport-level-selector").removeClass("selected")
 
   $(".select-sports-submit").click (event) ->
-    # console.log $(".model-other-sports").val()
-    # console.log $(".model-phone").val()
-    # console.log $(".model-location").val()
+    email = $(".model-email").val()
+    location = $(".model-location").val()
+    phone = $(".model-phone").val()
+    otherSports = $(".model-other-sports").val()
 
     data =
-      email:        $(".model-email").val()
-      location: 		$(".model-location").val()
-      phone: 				$(".model-phone").val()
-      other_sports: $(".model-other-sports").val()
+      email:        email
+      location: 		location
+      phone: 				phone
+      other_sports: otherSports
 
     form = $(".select-sports-form")
     _.each data, (value, key) -> form.append("<input type='hidden' name='#{key}' id='#{key}' value='#{value}'/>")
