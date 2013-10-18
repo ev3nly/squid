@@ -3,46 +3,42 @@
 // You can use Less here: http://lesscss.org/
 
 @import "config";
+@import "mixins";
 
-.splash {
-  background: @light;
-
-  .splash-header {
+.splash-home {
+  .splash-jumbotron {
     background: @blue;
     text-align: center;
 
     h1 {
       color: @light;
       font-size: @big-font;
-    }
-
-    .splash-header-text {
       padding-top: 20px;
     }
 
-    .splash-header-sport-icon-container {
+    .sport-icon-container {
+      .make-row();
       margin: -10px 5% -10px 5%;
-      text-align: center;
     }
 
-    .splash-header-sport-icon {
-      text-align: center;
+    .sport-icon {
       display: inline-block;
       margin: 50px 3%;
     }
   }
 
   .splash-marketing {
+    background: @light;
     text-align: left;
 
-    h2 {
+    h1 {
       text-align: center;
       color: @blue;
       font-weight: 400;
       font-size: @big-font;
     }
 
-    h1 {
+    h2 {
       .title-font(@dark-gray);
     }
 
@@ -55,63 +51,37 @@
       vertical-align: middle;
     }
 
-    .splash-marketing-main-header {
+    .main-header {
+      .make-row();
       margin-top: 20px;
-      margin-bottom: -20px;
     }
 
-    .splash-marketing-image {
-      display: table-cell;
-      vertical-align: middle;
-      margin: auto auto;
-      padding-top: 20px;
-    }
-
-    .splash-marketing-bullet {
+    .marketing-bullet {
+      .make-row();
       padding: 17px;
+
+      .bullet-image {
+        .make-md-column-push(2);
+        .make-md-column(4);
+        padding-top: 20px;
+
+        button {
+          margin-top: 40px;
+        }
+      }
+
+      .bullet-text {
+        .make-md-column-push(2);
+        .make-md-column(4);
+      }
     }
 
-    .btn-red {
-      margin-top: 70px;
-    }
-
-    .splash-marketing-high-five {
-      margin-top: 10px;
-    }
-
-    .splash-marketing-last-bullet {
+    .last-bullet {
       margin-bottom: 20px;
+
+      .high-five {
+        margin-top: 10px;
+      }
     }    
-  }
-
-  .splash-share {
-    background: @blue;
-    text-align: center;
-
-
-    h1 {
-      color: @light;
-      font-size: @big-font;
-      font-weight: 200;
-    }
-
-    h2 {
-      color: @light;
-      font-size: @medium-font;
-      font-weight: 500;
-    }
-
-    .splash-share-row-1 {
-      padding-top: 10px;
-    }
-
-    .splash-share-row-2 {
-      margin-top: -20px;
-    }
-
-    .splash-share-button-row {
-      margin-top: 20px;
-      padding-bottom: 40px;
-    }
   }
 }
