@@ -13,11 +13,11 @@ Squid::Application.routes.draw do
   get "/how-it-works" => "splash#how_it_works", as: :how_it_works
   # get "/contact"      => "splash#contact"
 
-  post "/sign-up" 					=> "sign_up#sign_up"
+  post "/select-sports" 					=> "sign_up#selected_sports"
+  post "/select-times"            => "sign_up#selected_times"
 
   if Rails.env.development?
     get "/select-sports"      => "sign_up#select_sports", as: :select_sports
-    get "/home"               => "sign_up#waiting"
     get "/sign-up-completed"  => "sign_up#sign_up_completed", as: :sign_up_completed
     get "/splash"             => "splash#splash"
   end

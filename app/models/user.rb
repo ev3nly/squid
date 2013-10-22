@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 	has_many :activities, through: :interests, source: :interesting, source_type: "Activity"
 
 	has_many :suggestions, inverse_of: :user
+	has_many :availability_times, inverse_of: :user
 
 	### VALIDATIONS
 
@@ -81,7 +82,15 @@ class User < ActiveRecord::Base
 	end
 
 	def finished_signing_up?
+		
+	end
+
+	def selected_sports?
 		!self.phone.blank? && !self.location.blank?
+	end
+
+	def selected_times?
+		self.availability_times.count > 0
 	end
 
 end

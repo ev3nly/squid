@@ -5,8 +5,8 @@ class SignUpController < ApplicationController
 
   end
 
-  # POST /sign-up
-  def sign_up
+  # POST /select-sports
+  def select_sports
   	@errors = []
 
     if params[:email].blank?
@@ -41,7 +41,7 @@ class SignUpController < ApplicationController
     @user.email = @email
   	@user.phone = @phone
   	@user.location = @location
-  	@user.save
+  	@user.save!
     
   	@user.suggestions << Suggestion.new(body: params[:other_sports]) if !params[:other_sports].blank?
 
@@ -56,9 +56,19 @@ class SignUpController < ApplicationController
   	redirect_to root_url
   end
 
-  # GET /home
-  def waiting
+  # GET /select-times
+  def select_times
     
+  end
+
+  # POST /select-times
+  def selected_times
+    params[:times].each do |raw_time|
+      day, period = raw_time.split(":")
+      time = AvailabilityTime.create!(day: day, period_of_day: period, user_id: current_user.id)
+    end
+
+    redirect_to root_url
   end
 
   # GET /sign-up-completed
