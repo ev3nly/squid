@@ -18,6 +18,7 @@ Squid::Application.routes.draw do
 
   if Rails.env.development?
     get "/select-sports"      => "sign_up#select_sports", as: :select_sports
+    get "/select-times"       => "sign_up#select_times", as: :select_times
     get "/sign-up-completed"  => "sign_up#sign_up_completed", as: :sign_up_completed
     get "/splash"             => "splash#splash"
   end

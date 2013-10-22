@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
 	end
 
 	def finished_signing_up?
-		
+		selected_sports? and selected_times?
 	end
 
 	def selected_sports?
