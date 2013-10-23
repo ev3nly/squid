@@ -6,7 +6,7 @@ class SignUpController < ApplicationController
   end
 
   # POST /select-sports
-  def select_sports
+  def selected_sports
   	@errors = []
 
     if params[:email].blank?
@@ -63,9 +63,15 @@ class SignUpController < ApplicationController
 
   # POST /select-times
   def selected_times
+    if params[:times].nil? or params[:times].empty?
+      render template: "sign_up/select_times" and return
+    end
+
+    AvailabilityTime.destroy_all(user_id: current_user.id)
+
     params[:times].each do |raw_time|
       day, period = raw_time.split(":")
-      time = AvailabilityTime.create!(day: day, period_of_day: period, user_id: current_user.id)
+      time = AvailabilityTime.where(day: day, period: period, user_id: current_user.id).first_or_create!
     end
 
     redirect_to root_url

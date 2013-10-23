@@ -1,7 +1,7 @@
 class AvailabilityTime < ActiveRecord::Base
 
 	# :day
-	# :period_of_day
+	# :period
 	# :user_id
 
 	### ASSOCIATIONS
@@ -10,6 +10,7 @@ class AvailabilityTime < ActiveRecord::Base
 
 	### VALIDATIONS
 
-	validates_presence_of :day, :period_of_day, :user_id
+	validates_presence_of :day, :period, :user_id
+	validates_uniqueness_of :day, scope: [:period, :user_id]
 
 end

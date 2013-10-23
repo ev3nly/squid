@@ -11,11 +11,11 @@ class User < ActiveRecord::Base
 
 	### ASSOCIATIONS
 
-	has_many :interests, as: :interested
+	has_many :interests, as: :interested, dependent: :destroy
 	has_many :activities, through: :interests, source: :interesting, source_type: "Activity"
 
 	has_many :suggestions, inverse_of: :user
-	has_many :availability_times, inverse_of: :user
+	has_many :availability_times, inverse_of: :user, dependent: :destroy
 
 	### VALIDATIONS
 
@@ -79,6 +79,12 @@ class User < ActiveRecord::Base
 		value.gsub!(/\D/, '')
     value.slice!("1") if value[0, 1] == "1"
 		super(value)
+	end
+
+	def available?(day, period)
+		AvailabilityTime
+			.where(user_id: self.id, day: day.downcase, period: period.downcase)
+			.any?
 	end
 
 	def finished_signing_up?
