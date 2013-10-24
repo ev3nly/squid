@@ -1,0 +1,72 @@
+<div class="select-times">
+	<div>
+		<h2>When would you like to play?</h2>
+		 <p>
+			Please give us a general sense for your availability.<br>
+			We know things change week-to-week, so you can always<br> 
+			join games on different times / days and make updates.
+		</p>
+	</div>
+
+	<%= form_tag("/select-times", method: "post", class: "select-times-form") do %>
+		<table class="table">
+			<thead>
+				<tr>
+					<th></th>
+					<th class="day-period">Mornings<br>(6am-9am)</th>
+					<th class="day-period">Afternoons<br>(10am-4pm)</th>
+					<th class="day-period">Evenings<br>(6pm-10pm)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th class="day">M</th>
+					<td><input type="checkbox" name="times[]" value="monday:morning" <%= current_user.available?("monday", "morning") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="monday:afternoon" <%= current_user.available?("monday", "afternoon") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="monday:evening" <%= current_user.available?("monday", "evening") ? "checked" : "" %>></td>
+				</tr>
+				<tr>
+					<th class="day">T</th>
+					<td><input type="checkbox" name="times[]" value="tuesday:morning" <%= current_user.available?("tuesday", "morning") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="tuesday:afternoon" <%= current_user.available?("tuesday", "afternoon") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="tuesday:evening" <%= current_user.available?("tuesday", "evening") ? "checked" : "" %>></td>
+				</tr>
+				<tr>
+					<th class="day">W</th>
+					<td><input type="checkbox" name="times[]" value="wednesday:morning" <%= current_user.available?("wednesday", "morning") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="wednesday:afternoon" <%= current_user.available?("wednesday", "afternoon") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="wednesday:evening" <%= current_user.available?("wednesday", "evening") ? "checked" : "" %>></td>
+				</tr>
+				<tr>
+					<th class="day">Th</th>
+					<td><input type="checkbox" name="times[]" value="thursday:morning" <%= current_user.available?("thursday", "morning") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="thursday:afternoon" <%= current_user.available?("thursday", "afternoon") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="thursday:evening" <%= current_user.available?("thursday", "evening") ? "checked" : "" %>></td>
+				</tr>
+				<tr>
+					<th class="day">F</th>
+					<td><input type="checkbox" name="times[]" value="friday:morning" <%= current_user.available?("friday", "morning") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="friday:afternoon" <%= current_user.available?("friday", "afternoon") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="friday:evening" <%= current_user.available?("friday", "evening") ? "checked" : "" %>></td>
+				</tr>
+				<tr>
+					<th class="day">S</th>
+					<td><input type="checkbox" name="times[]" value="saturday:morning" <%= current_user.available?("saturday", "morning") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="saturday:afternoon" <%= current_user.available?("saturday", "afternoon") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="saturday:evening" <%= current_user.available?("saturday", "evening") ? "checked" : "" %>></td>
+				</tr>
+				<tr>
+					<th class="day">Su</th>
+					<td><input type="checkbox" name="times[]" value="sunday:morning" <%= current_user.available?("sunday", "morning") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="sunday:afternoon" <%= current_user.available?("sunday", "afternoon") ? "checked" : "" %>></td>
+					<td><input type="checkbox" name="times[]" value="sunday:evening" <%= current_user.available?("sunday", "evening") ? "checked" : "" %>></td>
+				</tr>
+			</tbody>
+		</table>
+		<button type="submit" class="btn btn-lg btn-embossed btn-red select-times-submit" 
+			data-loading-text="Submitting...">
+			<i class="icon-bolt icon-large"></i>
+			Continue
+		</button>
+	<% end %>
+</div>

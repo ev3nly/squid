@@ -22,6 +22,10 @@
   background-color: @color;
 }
 
+.no-border {
+  .bordered(0, white);
+}
+
 .bordered(@width: 1px; @color: @border-color;) {
   border-style: solid;
   border-width: @width;

@@ -11,10 +11,11 @@ class User < ActiveRecord::Base
 
 	### ASSOCIATIONS
 
-	has_many :interests, as: :interested
+	has_many :interests, as: :interested, dependent: :destroy
 	has_many :activities, through: :interests, source: :interesting, source_type: "Activity"
 
 	has_many :suggestions, inverse_of: :user
+	has_many :availability_times, inverse_of: :user, dependent: :destroy
 
 	### VALIDATIONS
 
@@ -80,8 +81,22 @@ class User < ActiveRecord::Base
 		super(value)
 	end
 
+	def available?(day, period)
+		AvailabilityTime
+			.where(user_id: self.id, day: day.downcase, period: period.downcase)
+			.any?
+	end
+
 	def finished_signing_up?
+		selected_sports? and selected_times?
+	end
+
+	def selected_sports?
 		!self.phone.blank? && !self.location.blank?
+	end
+
+	def selected_times?
+		self.availability_times.count > 0
 	end
 
 end

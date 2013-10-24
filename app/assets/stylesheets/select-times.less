@@ -1,0 +1,53 @@
+@import "config";
+@import "mixins";
+
+.select-times {
+	@td-width: 150px;
+	@th-width: 20px;
+	@table-width: (3 * @td-width + @th-width);
+	padding: 20px 0 20px 0;
+
+	h2, p { 
+		width: @table-width;
+		margin: 0 auto 0 auto;
+		padding: 20px 0 20px 0;
+		text-align: center; 
+		color: @red;
+	}
+
+	background: @light;
+	margin: 0;
+
+	table.table {
+		width: @table-width;
+		margin: 0 auto 50px auto;
+
+		th, td { .no-border; }
+		th {
+			width: @th-width;
+
+			&.day-period { 
+				font-size: @very-small-font;
+				color: @dark-gray;
+				font-weight: 300;
+				text-align: center; 
+			}
+
+			&.day {
+				font-size: @small-font;
+				color: @dark-gray;
+				font-weight: 300;
+			}
+		}
+
+		td {
+			width: @td-width;
+			input {
+				display: block;
+				width: 20px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}
