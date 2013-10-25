@@ -25,6 +25,10 @@
       display: inline-block;
       margin: 50px 3%;
     }
+
+    .jumbotron-button {
+      .make-row();
+    }
   }
 
   .splash-marketing {
@@ -84,8 +88,42 @@
       }
     }    
   }
-}
 
-@media screen and (max-width : 650px) {
+  @media screen and (max-width : 650px) {
+    .grid_1,
+    .grid_2,
+    .grid_3,
+    .grid_4,
+    .grid_5,
+    .grid_6,
+    .grid_7,
+    .grid_8,
+    .grid_9,
+    .grid_10,
+    .grid_11,
+    .grid_12 {
+      width:100%;
+    }
 
+    .splash-jumbotron {
+      h1 {
+        font-size: @medium-font;
+      }
+
+      .sport-icon-container {
+        display: none;
+      }
+
+      .jumbotron-button {
+        padding-top: 20px;
+        padding-bottom: 0px;
+      }
+    }
+
+    .splash-marketing {
+      h1 {
+        font-size: @medium-font;
+      }
+    }
   }
+}
