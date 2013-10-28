@@ -1,7 +1,11 @@
-<div class="<%= "row logo-header-#{ logo_header }" %>">
-  <% @logo_color = ((logo_header=="blue") ? "white" : "blue") %>
-  <a href="/">
-    <%= image_tag("brand/lightning-logo-#{ @logo_color }.png", alt: "lightning logo") %>
-    <h1>LIGHTNING</h1>
-  </a>
+<div class="shared-lightning-header">
+  <div class="<%= "row logo-header-#{ logo_header }" %>">
+    <% @logo_color = ((logo_header=="blue") ? "white" : "blue") %>
+    <a href="/">
+      <div class="header-image">
+        <%= image_tag("brand/lightning-logo-#{ @logo_color }.png", alt: "lightning logo") %>
+      </div>
+      <h1>LIGHTNING</h1>
+    </a>
+  </div>
 </div>

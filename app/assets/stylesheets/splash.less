@@ -3,16 +3,11 @@
 // You can use Less here: http://lesscss.org/
 
 @import "config";
+@import "mixins";
 
-.splash {
-  background: @light;
-
-  .btn-fb.btn-lg {
-    font-size: @medium-font;
-  }
-
+.splash-home {
   .fb-never-post {
-    margin: 10px 0;
+    margin: 15px 0;
     text-align: center;
     font-size: 1.0em;
     color: @light-gray;
@@ -22,48 +17,48 @@
     }
   }
 
-  .splash-header {
+  .splash-jumbotron {
     background: @blue;
     text-align: center;
 
     h1 {
       color: @light;
       font-size: @big-font;
-    }
-
-    .splash-header-text {
       padding-top: 20px;
     }
 
-    .splash-header-sport-icon-container {
+    .sport-icon-container {
+      .make-row();
       margin: -10px 5% -10px 5%;
-      text-align: center;
     }
 
-    .splash-header-sport-icon {
-      text-align: center;
+    .sport-icon {
       display: inline-block;
       margin: 50px 3%;
+    }
+
+    .jumbotron-button {
+      .make-row();
     }
   }
 
   .splash-marketing {
+    background: @light;
     text-align: left;
 
-    h2 {
+    h1 {
       text-align: center;
       color: @blue;
       font-weight: 400;
       font-size: @big-font;
     }
 
-    h1 {
+    h2 {
       .title-font(@dark-gray);
     }
 
     h3 {
       .description-font(@dark-gray);
-      line-height: 26px;
     }
 
     img {
@@ -71,68 +66,85 @@
       vertical-align: middle;
     }
 
-    .splash-marketing-main-header {
+    .fb-never-post {
+      margin-top: 15px;
+    }
+
+    .main-header {
+      .make-row();
       margin-top: 20px;
-      margin-bottom: -20px;
     }
 
-    .splash-marketing-image {
-      display: table-cell;
-      vertical-align: middle;
-      margin: auto auto;
-      padding-top: 20px;
-    }
-
-    .splash-marketing-bullet {
+    .marketing-bullet {
+      .make-row();
       padding: 17px;
+
+      .bullet-image {
+        .make-md-column-push(2);
+        .make-md-column(4);
+        padding-top: 20px;
+
+        button {
+          margin-top: 40px;
+        }
+      }
+
+      .bullet-text {
+        .make-md-column-push(2);
+        .make-md-column(4);
+      }
     }
 
-    .btn-red {
-      margin-top: 70px;
-    }
-
-    .splash-marketing-high-five {
-      margin-top: 10px;
-    }
-
-    .splash-marketing-last-bullet {
+    .last-bullet {
       margin-bottom: 20px;
-    }    
-  }
 
-  .splash-share {
-    background: @blue;
-    text-align: center;
+      .high-five {
+        margin-top: 10px;
+      }
+    } 
 
-
-    h1 {
-      color: @light;
-      font-size: @big-font;
-      font-weight: 200;
-    }
-
-    h2 {
-      color: @light;
-      font-size: @medium-font;
-      font-weight: 500;
-    }
-
-    .splash-share-row-1 {
-      padding-top: 10px;
-    }
-
-    .splash-share-row-2 {
-      margin-top: -20px;
-    }
-
-    .splash-share-button-row {
-      margin-top: 20px;
-      padding-bottom: 40px;
+    .learn-more {
+      .make-row();
+      width: 257px;
+      margin: 50px auto 50px auto;
     }
   }
 
-  .learn-more {
-    width: 257px;
-    margin: 50px auto 50px auto;
+  @media screen and (max-width : 650px) {
+    .grid_1,
+    .grid_2,
+    .grid_3,
+    .grid_4,
+    .grid_5,
+    .grid_6,
+    .grid_7,
+    .grid_8,
+    .grid_9,
+    .grid_10,
+    .grid_11,
+    .grid_12 {
+      width:100%;
+    }
+
+    .splash-jumbotron {
+      h1 {
+        font-size: @medium-font;
+      }
+
+      .sport-icon-container {
+        display: none;
+      }
+
+      .jumbotron-button {
+        padding-top: 20px;
+        padding-bottom: 0px;
+      }
+    }
+
+    .splash-marketing {
+      h1 {
+        font-size: @medium-font;
+      }
+    }
   }
 }
