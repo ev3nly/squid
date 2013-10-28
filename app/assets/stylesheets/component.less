@@ -90,6 +90,9 @@
 
 .lightning-footer {
   .make-row();
+  margin-left: 0;
+  margin-right: 0;
+
 	.bordered-top;
   padding-top: 20px;
   padding-bottom: 30px;
@@ -119,12 +122,12 @@
   .footer-link {
     margin-bottom: 8px;
     a {
-      color: @blue;
+      color: @light-gray;
       font-weight: 400;
     }
 
     a:hover {
-      color: @light-gray;
+      color: @dark-gray;
     }
   }
 
@@ -162,6 +165,10 @@
   .waitlist-share-button-row {
     margin-top: 20px;
     padding-bottom: 40px;
+
+    button {
+      width: 200px;
+    }
 
     button i {
       margin-right: 10px;
