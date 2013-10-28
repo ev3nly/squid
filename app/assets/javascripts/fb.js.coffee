@@ -5,6 +5,7 @@ window.fbConnected = ->
 
 $( document ).ready ->
   $(".btn-fb").click ->
+    mixpanel.track("FB Button Clicked")
     FB.getLoginStatus (response) ->
     	window.location = "/auth/facebook"
       # FB.login (response) ->
