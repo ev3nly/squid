@@ -30,6 +30,9 @@
 }
 
 .btn {
+  color: white;
+  background: @light-gray;
+
   &.btn-embossed {
     .box-shadow(inset 0 -2px 0 fade(black, 15%));
     &.active,
@@ -40,6 +43,14 @@
 
   &:hover, &:focus {
     color: @light;
+    background: darken(@light-gray, 10%);
+  }
+}
+
+.btn-light {
+  background: lighten(@light-gray, 10%);
+  &:hover, &:focus {
+    background: @light-gray;
   }
 }
 
@@ -49,7 +60,7 @@
   font-size: 1.5em;
   text-align: center;
   display: block;
-  margin: 0px auto 40px;
+  margin: 0px auto 0px;
   padding: 10px 20px;
 
   &:hover, &:focus {

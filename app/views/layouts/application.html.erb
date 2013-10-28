@@ -11,7 +11,12 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
-  <meta name="description" content="Sign up for free. From basketball to curling, we organize great weekly sports across your city. Only play when its convenient. It's the easiest, most flexible way to enjoy great activities.">
+  <meta property="og:title" content="Lightning Social Club | Play more sports" />
+  <meta property="og:description" content="From football to bowling, Lightning organizes weekly sports across your city. Sign up, book your spot and play. That’s it. Never wait for a court again!" />
+  <meta property="og:image" content="<%= image_url("brand/lightning-logo-og.png", alt: "lightning logo") %>" />
+  <meta property="og:url" content="https://joinlightning.com" />
+
+  <meta name="description" content="Play your favorite sports when you'd like, meet amazing people">
   <meta name="keywords" content="Lightning,play,sports,baseball,basketball,pickup,whiffle,ball,ultimate,frisbee,bowling,golf,bocce,soccer,touch,football,tennis">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

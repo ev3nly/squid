@@ -7,6 +7,19 @@
 
 .splash-home {
   .splash-jumbotron {
+
+  .fb-never-post {
+    margin: 5px 0;
+    text-align: center;
+    font-size: @very-small-font;
+    color: @light-gray;
+
+    &.dark {
+      color: darken(@blue, 10%);
+    }
+  }
+
+  .splash-header {
     background: @blue;
     text-align: center;
 
@@ -48,6 +61,7 @@
 
     h3 {
       .description-font(@dark-gray);
+      line-height: 26px;
     }
 
     img {
@@ -125,5 +139,10 @@
         font-size: @medium-font;
       }
     }
+  }
+
+  .learn-more {
+    width: 257px;
+    margin: 50px auto 50px auto;
   }
 }

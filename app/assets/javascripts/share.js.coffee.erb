@@ -6,16 +6,21 @@ $( document ).ready ->
 		window.open link, "facebook-share-dialog", "width=626,height=436"
 
 	$(".share-twitter").click (event) ->
-		tweet = "Join Lightning and have fun activities fully organized for you, just show up and have fun!"
-		link = "http://twitter.com/home?status=#{encodeURIComponent("#{tweet} #{shareLink}")}"
+		tweet = "Check out Lightning: #{shareLink}. From tennis to bowling, they organize weekly sports. Browse, reserve, then play. That's it!"
+		link = "http://twitter.com/home?status=#{encodeURIComponent("#{tweet}")}"
 		x = screen.width/2 - 550/2
 		y = screen.height/2 - 450/2
 		window.open(link, "", "width=550, height=450, top=#{y}, left=#{y}")
 
 	$(".share-email").click (event) ->
 		body = "Hey!#{escape("\n\n")}
-			Join Lightning and have fun activities fully organized for you.
-			All you have to do is show up and have fun!#{escape("\n\n")}
-			#{shareLink}"
+
+			Check out Lightning.  From football to bowling, they 
+			organize weekly sports across your city.  Sign up, book your spot and play.  
+			That’s it.  Never wait for a court again! #{escape("\n\n")}
+
+			#{shareLink} #{escape("\n\n")}
+
+			Cheers."
 
 		window.location.href = "mailto:?subject=Join%20Lightning&body=#{body}"
