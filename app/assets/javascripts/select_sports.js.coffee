@@ -58,7 +58,7 @@ $( document ).ready ->
         toggleSport("#{sport}:#{level}")
 
     if (numberOfSports() == 0) 
-      $(".select-sports-count").text("")
+      $(".select-sports-count").text("No sports selected")
     else
       sportsString = if (numberOfSports() > 1) then "sports" else "sport"
       $(".select-sports-count").text("#{numberOfSports()} #{sportsString} selected!")

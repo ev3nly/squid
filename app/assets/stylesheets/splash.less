@@ -6,10 +6,7 @@
 @import "mixins";
 
 .splash-home {
-  .splash-jumbotron {
-
   .fb-never-post {
-    margin: 5px 0;
     text-align: center;
     font-size: @very-small-font;
     color: @light-gray;
@@ -19,7 +16,7 @@
     }
   }
 
-  .splash-header {
+  .splash-jumbotron {
     background: @blue;
     text-align: center;
 
@@ -41,6 +38,10 @@
 
     .jumbotron-button {
       .make-row();
+    }
+
+    .fb-never-post {
+      margin: 15px 0;
     }
   }
 
@@ -101,6 +102,10 @@
         margin-top: 10px;
       }
     }    
+
+    .fb-never-post {
+      margin: 15px 0 0 0;
+    }
   }
 
   @media screen and (max-width : 650px) {
