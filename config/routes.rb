@@ -7,7 +7,7 @@ Squid::Application.routes.draw do
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#destroy', as: 'signout'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
   
   get "/about"        => "splash#about"
   get "/how-it-works" => "splash#how_it_works", as: :how_it_works
