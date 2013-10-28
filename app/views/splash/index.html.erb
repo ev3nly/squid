@@ -1,78 +1,70 @@
 <% @page_title = "Lightning Sports | Soccer, football, basketball, bowling and more. Play when you want." %>
-<div class="splash">
-  <div class="splash-header">
+<div class="splash-home">
+  <div class="splash-jumbotron">
     <div class="container">
-      <div class="splash-header-text">
-        <h1>We're a social club that organizes<br>weekly sports across your city</h1>
-      </div>
+      <h1>We're a social club that organizes<br>weekly sports across your city</h1>
 
-      <div class="row splash-header-sport-icon-container">
-        <div class="splash-header-sport-icon">
+      <div class="sport-icon-container">
+        <span class="sport-icon">
           <%= image_tag("sports-icons/basketball-icon-dark-blue.png", alt: "play basketball") %>
-        </div>
-        <div class="splash-header-sport-icon">
+        </span>
+        <span class="sport-icon">
           <%= image_tag("sports-icons/golf-icon-dark-blue.png", alt: "play golf") %>
-        </div>
-        <div class="splash-header-sport-icon">
+        </span>
+        <span class="sport-icon">
           <%= image_tag("sports-icons/football-icon-dark-blue.png", alt: "play football") %>
-        </div>
-        <div class="splash-header-sport-icon">
+        </span>
+        <span class="sport-icon">
           <%= image_tag("sports-icons/bowling-icon-dark-blue.png", alt: "play bowling") %>
-        </div>
-        <div class="splash-header-sport-icon">
+        </span>
+        <span class="sport-icon">
           <%= image_tag("sports-icons/whiffle-icon-dark-blue.png", alt: "play whiffleball") %>
-        </div>
-        <div class="splash-header-sport-icon">
+        </span>
+        <span class="sport-icon">
           <%= image_tag("sports-icons/tennis-icon-dark-blue.png", alt: "play tennis") %>
-        </div>
-        <div class="splash-header-sport-icon">
+        </span>
+        <span class="sport-icon">
           <%= image_tag("sports-icons/ultimate-icon-dark-blue.png", alt: "play ultimate frisbee") %>
-        </div>
-        <div class="splash-header-sport-icon">
+        </span>
+        <span class="sport-icon">
           <%= image_tag("sports-icons/soccer-icon-dark-blue.png", alt: "play soccer") %>
-        </div>
+        </span>
       </div>
 
-      <div class="row">
-        <button type="button" class="btn btn-embossed btn-lg btn-red btn-fb">
-          <i class="icon-facebook-sign"></i>
-          Apply For Membership
-        </button>
-        <p class="fb-never-post dark">We'll never post to your wall without your permission</p>
+      <div class="jumbotron-button">
+        <button type="button" class="btn btn-embossed btn-red btn-fb">
+    			<i class="icon-facebook-sign"></i>Apply For Membership
+    		</button>
       </div>
+  		<p class="fb-never-post dark">We will never post to your wall</p>
     </div>
   </div>
 
   <div class="splash-marketing">
     <div class="container">
-      <div class="row splash-marketing-main-header">
-        <h2>Play your favorite sports when you'd like,<br> meet amazing people</h2>
+      <div class="main-header">
+        <h1>Play your favorite sports when you'd like,<br> meet amazing people</h1>
       </div>
 
-      <div class="row splash-marketing-bullet">
-        <div class="col-md-2"></div>
-        <div class="col-md-4 splash-marketing-image">
-          <h1>Apply with Facebook</h1>
-          <h3>
-            We want to make sure our community remains awesome.
-          </h3>
+      <div class="marketing-bullet">
+        <div class="bullet-text">
+          <h2>Apply with Facebook</h2>
+          <h3>We want to make sure our community remains awesome.</h3>
         </div>
-        <div class="col-md-4">
+        <div class="bullet-image">
           <button type="button" class="btn btn-embossed btn-red btn-fb">
-            <i class="icon-facebook-sign"></i>
-            Apply For Membership
-          </button>
-          <p class="fb-never-post">We'll never post to your wall without your permission</p>
+			<i class="icon-facebook-sign"></i>Apply For Membership
+		  </button>
+		  <p class="fb-never-post">We will never post to your wall</p>
         </div>
       </div>
 
-      <div class="row splash-marketing-bullet">
-        <div class="col-md-2"></div>
-        <div class="col-md-4 splash-marketing-image">
+      <div class="marketing-bullet">
+        <div class="bullet-image">
           <%= image_tag("splash-marketing/marketing-match.png", alt: "Calendar") %>
         </div>
-        <div class="col-md-4">
-          <h1>We personally match you</h1>
+        <div class="bullet-text">
+          <h2>We personally match you</h2>
           <h3>
             with players of similar talent that<br> 
             you don't yet know, but should.
@@ -80,28 +72,26 @@
         </div>
       </div>
 
-      <div class="row splash-marketing-bullet">
-        <div class="col-md-2"></div>
-        <div class="col-md-4">
-          <h1>Reserve your spot</h1>
+      <div class="marketing-bullet">
+        <div class="bullet-text">
+          <h2>Reserve your spot</h2>
           <h3>
             Every week we'll set up activities.<br>
             If you like one, reserve your spot.<br>
             If not, there's always next week!
           </h3>
         </div>
-        <div class="col-md-4 splash-marketing-image">
+        <div class="bullet-image">
           <%= image_tag("splash-marketing/marketing-calendar.png", alt: "Match") %>
         </div>
       </div>
 
-      <div class="row splash-marketing-bullet splash-marketing-last-bullet">
-        <div class="col-md-2"></div>
-        <div class="col-md-4 splash-marketing-image splash-marketing-high-five">
+      <div class="marketing-bullet last-bullet">
+        <div class="bullet-image high-five">
           <%= image_tag("splash-marketing/marketing-high-five-red.png", alt: "High Five") %>
         </div>        
-        <div class="col-md-4">
-          <h1>Show up and play</h1>
+        <div class="bullet-text">
+          <h2>Show up and play </h2>
           <h3>
             From fielding teams to reserving courts, we do all the work.
           </h3>

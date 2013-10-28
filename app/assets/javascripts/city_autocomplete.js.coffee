@@ -5,7 +5,7 @@
 
 $( document ).ready ->
 	$(".model-location").typeahead
-		name: "Cities Bitches"
+		name: "Cities"
 		remote: 
 			url: "/locations?callback=?&q=%QUERY"
 			dataType: "jsonp"
