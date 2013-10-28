@@ -117,3 +117,7 @@
 
   <%= render partial: "shared/waitlist_share", locals: { title: "Bring Lightning to your city faster", body: "Tell your friends" } %>
 </div>
+
+<script>
+  mixpanel.track("Splash Page Loaded");
+</script>

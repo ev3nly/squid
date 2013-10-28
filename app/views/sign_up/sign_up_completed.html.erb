@@ -16,3 +16,7 @@
   </div>
 </div>
 <%= render partial: "shared/waitlist_share", locals: { title: "Don't want to wait 3-4 weeks?", body: "Invite your friends to start playing sooner" } %>
+
+<script>
+  mixpanel.track("Home Page Loaded")
+</script>
