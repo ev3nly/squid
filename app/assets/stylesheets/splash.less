@@ -7,12 +7,13 @@
 
 .splash-home {
   .fb-never-post {
+    margin: 15px 0;
     text-align: center;
-    font-size: @very-small-font;
+    font-size: 1.0em;
     color: @light-gray;
 
     &.dark {
-      color: darken(@blue, 10%);
+      color: darken(@blue, 20%);
     }
   }
 
@@ -39,10 +40,6 @@
     .jumbotron-button {
       .make-row();
     }
-
-    .fb-never-post {
-      margin: 15px 0;
-    }
   }
 
   .splash-marketing {
@@ -62,12 +59,15 @@
 
     h3 {
       .description-font(@dark-gray);
-      line-height: 26px;
     }
 
     img {
       display: table-cell;
       vertical-align: middle;
+    }
+
+    .fb-never-post {
+      margin-top: 15px;
     }
 
     .main-header {
@@ -101,10 +101,12 @@
       .high-five {
         margin-top: 10px;
       }
-    }    
+    } 
 
-    .fb-never-post {
-      margin: 15px 0 0 0;
+    .learn-more {
+      .make-row();
+      width: 257px;
+      margin: 50px auto 50px auto;
     }
   }
 
@@ -144,10 +146,5 @@
         font-size: @medium-font;
       }
     }
-  }
-
-  .learn-more {
-    width: 257px;
-    margin: 50px auto 50px auto;
   }
 }
