@@ -17,6 +17,9 @@ gem 'pg'
 # Facebook Authentication
 gem 'omniauth-facebook', '1.4.0'
 
+# General HTTP calling
+gem 'httparty'
+
 # Facebook API usage
 gem "koala"
 
