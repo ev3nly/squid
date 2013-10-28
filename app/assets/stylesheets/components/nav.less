@@ -1,0 +1,46 @@
+@import "config";
+@import "mixins";
+
+.nav-logged-in {
+	background: white;
+	margin-bottom: 0;
+
+	.navbar-brand {
+		img { display: inline; }
+
+		color: @blue;
+		font-size: @medium-font;
+	}
+
+	.caret { 
+		// display: inline;
+		// position: absolute;
+		// top: 40px;
+		// left: -5px;
+		color: @blue;
+		border-top-color: @blue !important;
+		border-bottom-color: @blue !important;
+	}
+
+	li a.navbar-btn {
+		.rounded-corners;
+
+		padding: 10px;
+		margin-top: 32px;
+
+		color: @blue !important;
+		font-size: @very-small-font;
+		font-weight: 400;
+
+		&:hover {
+			background: @blue;
+			color: white !important;
+		}
+	}
+
+	.profile-picture {
+		.rounded-corners(200px);
+		.bordered(5px, @blue);
+		display: inline;
+	}
+}

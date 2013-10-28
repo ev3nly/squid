@@ -16,7 +16,8 @@
 
  *= require mixins
  *= require config
- *= require components
+ *= require component
+ *= require_tree ./components
 
  *= require splash
  *= require about

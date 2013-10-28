@@ -74,6 +74,10 @@ class User < ActiveRecord::Base
 		self.name.split(" ").last
 	end
 
+	def profile_picture_url(width = 200, height = 200)
+		"https://graph.facebook.com/#{self.facebook_id}/picture?width=#{width}&height=#{height}"
+	end
+
 	def phone=(value)
 		return if value.nil?
 		value.gsub!(/\D/, '')

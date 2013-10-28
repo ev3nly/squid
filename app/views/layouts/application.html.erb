@@ -86,7 +86,9 @@
     </script>
   <% end %>
 
-  <% if @header_color == :light %>
+  <% if current_user %>
+    <%= render partial: "shared/logged_in_header"%>
+  <% elsif @header_color == :light %>
     <%= render partial: "shared/logo_header", object: "light" %>
   <% else %>
     <%= render partial: "shared/logo_header", object: "blue" %>
