@@ -163,6 +163,10 @@
     margin-top: 20px;
     padding-bottom: 40px;
 
+    .btn-blue {
+      height: 44px;
+    }
+
     button i {
       margin-right: 10px;
     }
@@ -188,10 +192,42 @@
   .shared-lightning-header {
     .logo-header-blue, .logo-header-light {
       padding: 0px;
+      margin-top: -10px
     }
 
     .header-image {
       display: none;
+    }
+  }
+
+  .waitlist-share {
+    .waitlist-share-button-row {
+      margin-top: 0px;
+      margin-bottom: -20px;
+
+      .btn-blue {
+        .make-row();
+        margin: 10px auto;
+        width: 280px;
+      }
+    }
+  }
+
+  .lightning-footer {
+    padding-top: 0px;
+    padding-bottom: 10px;
+
+    h2 {
+      text-align: center;
+      font-size: @very-small-font;
+    }
+
+    img {
+      margin-top: 10px;
+    }
+
+    .footer-link a {
+      font-size: @small-font;
     }
   }
 }
