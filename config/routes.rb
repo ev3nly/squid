@@ -16,6 +16,8 @@ Squid::Application.routes.draw do
   post "/select-sports" 					=> "sign_up#selected_sports"
   post "/select-times"            => "sign_up#selected_times"
 
+  get "/locations"    => "locations#index"
+
   if Rails.env.development?
     get "/select-sports"      => "sign_up#select_sports", as: :select_sports
     get "/select-times"       => "sign_up#select_times", as: :select_times
