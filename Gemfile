@@ -14,6 +14,9 @@ gem 'rails_12factor'
 # Use PostgreSQL as the database for Active Record
 gem 'pg'
 
+# Role based identification
+gem 'rolify'
+
 # Facebook Authentication
 gem 'omniauth-facebook', '1.4.0'
 
