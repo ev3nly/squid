@@ -1,0 +1,36 @@
+@import "config";
+@import "mixins";
+
+.waiting {
+  .image-content-fill("volleyball-background.png");
+  .bordered-top;
+
+  text-align: center;
+
+  h1 {
+    color: @red;
+    font-weight: 400;
+    margin: 50px 0;
+  }
+
+  h2 {
+    color: @red;
+    font-weight: 200;
+    margin: 50px 0;
+  }
+
+  p {
+    font-size: @small-font;
+    color: @dark-gray;
+    margin: 50px 0;
+
+    strong {
+      font-weight: 400;
+    }
+
+    span {
+      color: @blue;
+      font-weight: 400;
+    }
+  }
+}

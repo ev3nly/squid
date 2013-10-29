@@ -1,0 +1,27 @@
+<% @page_title = "Lightning Sports | Sign Up Completed" %>
+<div class="waiting">
+  <div class="container">
+    <div class="content row">
+      <div class="col-md-12 col-md-offset-0">
+        <h1>
+          Thanks for applying <%= current_user.first_name %>!
+        </h1>
+        <h2>
+          Lightning is not available in your area yet, but will be soon.
+        </h2>
+        <p>
+          <strong>Estimated wait:</strong> <span>About 3-4 weeks</span>
+          <br>
+          In the interim, our team will review your application
+          <br>
+          and let you know if we have any questions.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: "shared/waitlist_share", locals: { title: "Don't want to wait 3-4 weeks?", body: "Invite your friends to start playing sooner" } %>
+
+<script>
+  mixpanel.track("Waiting Page Loaded")
+</script>

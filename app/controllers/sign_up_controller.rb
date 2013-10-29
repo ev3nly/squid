@@ -77,9 +77,4 @@ class SignUpController < ApplicationController
     redirect_to root_url
   end
 
-  # GET /sign-up-completed
-  def completed
-
-  end
-
 end

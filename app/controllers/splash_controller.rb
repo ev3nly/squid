@@ -4,7 +4,7 @@ class SplashController < ApplicationController
 	def index
 		if current_user
 			if current_user.finished_signing_up?
-				render template: "sign_up/sign_up_completed"
+				render template: "home/waiting"
 			elsif !current_user.selected_sports?
 				render template: "sign_up/select_sports"
 			elsif !current_user.selected_times?
