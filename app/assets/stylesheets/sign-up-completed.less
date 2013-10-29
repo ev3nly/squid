@@ -1,35 +1,84 @@
 @import "config";
+@import "mixins";
 
 .sign-up-completed {
   background: @light;
   padding-top: 20px;
 
-  h1 {
-    .title-font(@red);
+  .sign-up-completed-text-info {
+    .make-row();
+    .make-md-column-push(2);
+    .make-md-column(6);
+
+    h1 {
+      .title-font(@red);
+    }
+
+    .sign-up-completed-top-text {
+      .description-font(@red);
+      margin-top: 40px;
+    }
+
+    .sign-up-completed-estimated-wait-text {
+      .description-font(@dark-gray);
+      margin-top: 30px;
+    }
+
+    .sign-up-completed-estimated-wait-time {
+      color: @blue;
+      padding-left: 6px;
+    }
+
+    .sign-up-completed-bottom-text {
+      .description-font(@dark-gray);
+      margin-bottom: 40px;
+    }
   }
 
-  img {
-    padding-top: 40px;
-    padding-left: 40px;
-  }
+  .sign-up-completed-image {
+    .make-md-column-push(2);
+    .make-md-column(2);
 
-  .sign-up-completed-top-text {
-    .description-font(@red);
-    margin-top: 40px;
-  }
+    img {
+      padding-top: 40px;
+      padding-left: 40px;
+    }
+  }  
 
-  .sign-up-completed-estimated-wait-text {
-    .description-font(@dark-gray);
-    margin-top: 30px;
-  }
+  @media screen and (max-width : 650px) {
+    .grid_1,
+    .grid_2,
+    .grid_3,
+    .grid_4,
+    .grid_5,
+    .grid_6,
+    .grid_7,
+    .grid_8,
+    .grid_9,
+    .grid_10,
+    .grid_11,
+    .grid_12 {
+      width:100%;
+    }
 
-  .sign-up-completed-estimated-wait-time {
-    color: @blue;
-    padding-left: 6px;
-  }
+    padding-top: 10px;
 
-  .sign-up-completed-bottom-text {
-    .description-font(@dark-gray);
-    margin-bottom: 40px;
+    .sign-up-completed-text-info {
+      .sign-up-completed-top-text {
+        margin-top: 30px;
+      }
+
+      .sign-up-completed-estimated-wait-text {
+        margin-top: 20px;
+      }
+
+      .sign-up-completed-bottom-text {
+        margin-bottom: 30px;
+      }
+    }
+
+    .sign-up-completed-image {
+      display: none;
+    }  
   }
 }
