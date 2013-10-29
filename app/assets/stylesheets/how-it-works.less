@@ -1,9 +1,11 @@
 @import "config";
+@import "mixins";
 
 .splash-how {
   background: @light;
 
-  .splash-how-row-title {
+  .how-title {
+    .make-row();
 
     h1 {
       margin-top: 30px;
@@ -12,7 +14,9 @@
     }
   }
 
-  .splash-how-row-text {
+  .how-text {
+    .make-md-column-push(2);
+    .make-md-column(8);
     padding: 0px 40px;
 
     h2 {
@@ -23,6 +27,42 @@
     p {
       margin-bottom: 40px;
       .description-font(@dark-gray);
+    }
+  }
+
+  @media screen and (max-width : 650px) {
+    .grid_1,
+    .grid_2,
+    .grid_3,
+    .grid_4,
+    .grid_5,
+    .grid_6,
+    .grid_7,
+    .grid_8,
+    .grid_9,
+    .grid_10,
+    .grid_11,
+    .grid_12 {
+      width:100%;
+    }
+
+    .how-title {
+      h1 {
+        margin-top: 20px;
+        margin-bottom: -20px;
+      }
+    }
+
+    .how-text {
+      padding: 0 10px;
+
+      h2 {
+        margin-top: 40px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
     }
   }
 }
