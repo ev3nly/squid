@@ -1,17 +1,14 @@
 <% @page_title = "Lightning Sports | Sign Up Completed" %>
 <div class="sign-up-completed">
   <div class="container">
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-6">
-        <h1>Thanks for applying <%= current_user.first_name %>!</h1>
-        <p class="sign-up-completed-top-text">Lightning is not yet available in your area,<br> but it will be soon.</p>
-        <p class="sign-up-completed-estimated-wait-text">Estimated wait: <span class="sign-up-completed-estimated-wait-time">About 3-4 weeks</span></p>
-        <p class="sign-up-completed-bottom-text">In the interim, our team will review your application and let you know if we have any questions.</p>
-      </div>
-      <div class="col-md-2">
-        <%= image_tag("splash-marketing/marketing-high-five-gray.png", alt: "join lightning hive five") %>
-      </div>
+    <div class="sign-up-completed-text-info">
+      <h1>Thanks for applying <%= current_user.first_name %>!</h1>
+      <p class="sign-up-completed-top-text">Lightning is not yet available in your area,<br> but it will be soon.</p>
+      <p class="sign-up-completed-estimated-wait-text">Estimated wait: <span class="sign-up-completed-estimated-wait-time">About 3-4 weeks</span></p>
+      <p class="sign-up-completed-bottom-text">In the interim, our team will review your application and let you know if we have any questions.</p>
+    </div>
+    <div class="sign-up-completed-image">
+      <%= image_tag("splash-marketing/marketing-high-five-gray.png", alt: "join lightning hive five") %>
     </div>
   </div>
 </div>
