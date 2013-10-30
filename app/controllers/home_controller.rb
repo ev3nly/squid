@@ -6,7 +6,7 @@ class HomeController < ApplicationController
 	end
 
 	def index
-		
+		@events = ["soccer"]
 	end
 
 end

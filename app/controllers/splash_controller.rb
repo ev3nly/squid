@@ -5,6 +5,7 @@ class SplashController < ApplicationController
 		if current_user
 			if current_user.finished_signing_up?
 				if current_user.is_approved?
+					@events = ["soccer", "football", "football"]
 					render template: "home/index"
 				else
 					render template: "home/waiting"

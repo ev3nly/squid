@@ -2,23 +2,35 @@
 <div class="home">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <h1>
-          Help us, help you...
-        </h1>
-        <h2>
-          We're hosting games all across San Francisco.
-        </h2>
-        <p>
-          Unfortunately, we haven't yet found any matches
-          <br>
-          for you based on your interests and settings
-        </p>
-      </div>
+      
+      <% if @events.empty? %>
+        <div class="col-md-12">
+          <h1>
+            Help us, help you...
+          </h1>
+          <h2>
+            We're hosting games all across San Francisco.
+          </h2>
+           <p>
+            Unfortunately, we haven't yet found any matches
+            <br>
+            for you based on your interests and settings
+          </p>
+        </div>
+      <% else %>
+        <div class="col-md-12">
+          <% @events.each do |event| %>
+            <%= render partial: "shared/event", locals: { booked: event == "soccer" } %>
+          <% end %>
+        </div>
+      <% end %>
+
     </div>
   </div>
 </div>
-<%= render partial: "shared/waitlist_share", locals: { title: "Inviting friends and setting flexible sport and time preferences will help us get you on the field sooner!", body: "Invite anyone in 30 seconds" } %>
+
+<% @color = @events.empty? ? :blue : :gray %>
+<%= render partial: "shared/waitlist_share", locals: { color: @color, title: "Inviting friends and setting flexible sport and time preferences will help us get you on the field sooner!", body: "Invite anyone in 30 seconds" } %>
 
 <script>
   mixpanel.track("Home Page Loaded")

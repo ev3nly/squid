@@ -1,0 +1,72 @@
+@import "config";
+@import "mixins";
+
+.event {
+	.bordered;
+	.rounded-corners(3px);
+
+	@event-width: 270px;
+	width: @event-width;
+	// min-height: 298px;
+	margin: 30px 30px;
+	background: white;
+	display: inline-block;
+
+	.event-icon {
+		display: inline;
+		margin-right: 5px;
+	}
+
+	.img-booked { display: none; }
+
+	.event-title {
+		.bordered-bottom;
+		padding: 10px;
+		width: (@event-width - 20px);
+		// height: 50px;
+		margin: 0 auto 20px;
+		font-size: @small-font;
+		color: @blue;
+	}
+
+	.event-time {
+		color: @blue;
+		margin-bottom: 20px;
+	}
+
+	.btn {
+		margin-bottom: 20px;
+		font-size: @very-small-font;
+		padding: 10px 20px;
+	}
+
+	.reserve-btn {
+		width: (@event-width - 20px);
+	}
+
+	.event-spots {
+		font-size: @very-small-font;
+		margin-bottom: 20px;
+	}
+
+	&.booked {
+		.bordered(2px, @blue);
+
+		.img-booked {
+			// float: right;
+			position: relative;
+			top: -42px;
+			left: 98px;
+			display: inline-block;
+		}
+
+		.event-title { height: 50px; }
+		.event-spots { visibility: hidden; }
+
+		.share-btn, .details-btn {
+			width: 39%;
+			margin-left: 2%;
+			margin-right: 2%;
+		}
+	}
+}

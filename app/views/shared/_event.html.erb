@@ -1,0 +1,21 @@
+<div class="event<%= " booked" if booked %>">
+	<h2 class="event-title">
+		<%= image_tag("sports-icons/ultimate-icon-light-blue-small.png", alt: "play ultimate frisbee", class: "event-icon") %>
+		Ultimate Frisbee
+		<%= image_tag("booked-banner.png", alt: "booked!", class: "img-booked") %>
+	</h2>
+	<p class="event-time">
+		THURSDAY<br>
+		OCTOBER 24TH<br>
+		8:00PM
+	</p>
+
+	<% if booked %>
+		<a class="btn btn-embossed details-btn">DETAILS</a>
+		<a class="btn btn-embossed share-btn">SHARE</a>
+	<% else %>
+		<a class="btn btn-red btn-embossed reserve-btn">VIEW DETAILS & RESERVE</a>
+	<% end %>
+
+	<p class="event-spots">6 SPOTS LEFT!</p>
+</div>
