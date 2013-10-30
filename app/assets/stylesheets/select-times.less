@@ -7,12 +7,16 @@
 	@table-width: (3 * @td-width + @th-width);
 	padding: 20px 0 20px 0;
 
-	h2, p { 
-		width: @table-width;
-		margin: 0 auto 0 auto;
-		padding: 20px 0 20px 0;
-		text-align: center; 
-		color: @red;
+	.instructions {
+		h2, p { 
+			margin: 0 auto 0 auto;
+			padding: 20px 0 20px 0;
+			text-align: center; 
+			color: @red;
+		}
+		p.instructions-paragraph-mobile {
+			display: none;
+		}
 	}
 
 	background: @light;
@@ -54,5 +58,23 @@
 	.select-times-submit {
 		margin-top: -10px;
 		margin-bottom: 20px;
+	}
+
+	@media screen and (max-width : 650px) {
+	  
+		.instructions {
+			h2 {
+				padding: 0;
+			}
+			p {
+				font-size: @very-small-font;
+				&.instructions-paragraph-web {
+					display: none;
+				}
+				&.instructions-paragraph-mobile {
+					display: inline-block;
+				}
+			}
+		}
 	}
 }

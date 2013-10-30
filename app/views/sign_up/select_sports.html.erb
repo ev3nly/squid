@@ -12,29 +12,26 @@
   		</div>
   	<% end %>
 
-    <div class="row sign-up-select-sports-instructions">
+    <div class="sign-up-select-sports-instructions">
       <h1>Select the sports you're interested in</h1>
     </div>
 
-    <div class="row sign-up-select-sports-sport-row">
-      <div class="col-md-3"></div>
+    <div class="sign-up-select-sports-sport-row">
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "basketball", title: "Basketball" } %>
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "football", title: "Touch Football" } %>
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "whiffle", title: "Whiffle Ball" } %>
     </div>
 
-    <div class="row sign-up-select-sports-sport-row">
-      <div class="col-md-3"></div>
+    <div class="sign-up-select-sports-sport-row">
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "bowling", title: "Bowling" } %>
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "golf", title: "Golf" } %>
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "tennis", title: "Tennis" } %>
     </div>
 
-    <div class="row sign-up-select-sports-sport-row">
-      <div class="col-md-3"></div>
+    <div class="sign-up-select-sports-sport-row">
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "ultimate", title: "Ultimate Frisbee" } %>
       <%= render partial: "shared/select_sports_sport", locals: { class_name: "soccer", title: "Soccer" } %>
-      <div class="col-md-2 sign-up-select-sports-form">
+      <div class="sign-up-select-sports-form">
         <textarea class="form-control model-other-sports" placeholder="Add any other sports you'd like to play here (e.g. volleyball, hockey, bocce, etc.)" rows="4"></textarea>
       </div>
     </div>
