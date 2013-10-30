@@ -1,0 +1,59 @@
+@import "config";
+@import "mixins";
+
+.event-details {
+	h2 {
+		.bordered-bottom(1px, @lighter-gray);
+		font-size: @very-small-font;
+		font-weight: 400;
+		text-align: center;
+		color: @light-gray;
+		padding-bottom: 5px;
+		margin-bottom: 20px;
+	}
+
+	.key-value {
+		.make-row();
+		.key {
+			.make-md-column(6);
+			display: inline;
+			font-size: @very-small-font;
+			font-weight: 400;
+			color: @light-gray;
+			text-align: right;
+		}
+
+		.value {
+			.make-md-column(6);
+			display: inline;
+			font-size: @medium-font;
+			font-weight: 100;
+			color: @darker-gray;
+			margin-top: -7px;
+
+			a {
+				font-size: @very-very-small-font;
+				font-weight: 200;
+			}
+		}
+	}
+
+	.button-row {
+		// .make-row();
+		margin: 10px 0 10px 30px;
+
+		.btn {
+			// .make-md-column(5);
+			// .make-md-column-offset(1);
+			width: 40%;
+			margin-left: 3%;
+			margin-right: 3%;
+		}
+	}
+
+	.spots-left {
+		text-align: center;
+		color: @red;
+		margin: 20px 0;
+	}
+}

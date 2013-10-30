@@ -1,28 +1,28 @@
-<nav class="navbar navbar-default nav-logged-in container" role="navigation">
-	<div class="navbar-header">	
-		<a class="navbar-brand" href="#">
-			<%= image_tag("brand/lightning-logo-blue-small.png", alt: "lightning logo") %>
-			LIGHTNING
-		</a>
-	</div>
-
-	<div class="collapse navbar-collapse navbar-logged-in-collapse">
-	<ul class="nav navbar-nav navbar-right">
-		<!-- <li><a href="#" class="navbar-btn">INVITE FRIENDS</a></li> -->
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				<b class="caret"></b>
-				<img class="profile-picture" src="<%= current_user.profile_picture_url(65, 65) %>">
+<div class="nav-wrapper">
+	<nav class="navbar navbar-default nav-logged-in container" role="navigation">
+		<div class="navbar-header">	
+			<a class="navbar-brand" href="#">
+				<%= image_tag("brand/lightning-logo-blue-small.png", alt: "lightning logo") %>
+				LIGHTNING
 			</a>
-			<ul class="dropdown-menu">
-				<!-- <li><a href="#">Profile</a></li> -->
-				<!-- <li><a href="#">Select Sports</a></li> -->
-				<!-- <li><a href="#">Select Times</a></li> -->
-				<li><a href="/logout">Log Out</a></li>
+		</div>
+
+		<div class="collapse navbar-collapse navbar-logged-in-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<!-- <li><a href="#" class="navbar-btn">INVITE FRIENDS</a></li> -->
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<b class="caret"></b>
+						<img class="profile-picture" src="<%= current_user.profile_picture_url(65, 65) %>">
+					</a>
+					<ul class="dropdown-menu">
+						<!-- <li><a href="#">Profile</a></li> -->
+						<!-- <li><a href="#">Select Sports</a></li> -->
+						<!-- <li><a href="#">Select Times</a></li> -->
+						<li><a href="/logout">Log Out</a></li>
+					</ul>
+				</li>
 			</ul>
-		</li>
-	</ul>
-
-
-	</div>
-</nav>
+		</div>
+	</nav>
+</div>

@@ -1,0 +1,44 @@
+@import "config";
+@import "mixins";
+
+.event-show {
+	background: @light;
+	padding-bottom: 50px;
+}
+
+.event-booking {
+	.reserve-header {
+		color: @blue;
+		font-size: @very-big-font;
+	}
+
+	.reserve-details {
+		margin-bottom: 50px;
+		color: @blue;
+		font-size: @very-small-font;
+	}
+
+	.num-spots-text {
+		display: inline;
+		font-size: @very-small-font;
+		color: @darker-gray;
+	}
+
+	.num-spots {
+		width: 60px;
+	}
+
+	.total-cost-text {
+		font-size: @medium-font;
+		font-weight: 400;
+	}
+
+	.total-cost {
+		color: @blue;
+	}
+
+	.fine-print { 
+		margin-bottom: 50px;
+		font-size: @very-very-small-font; 
+	}
+}

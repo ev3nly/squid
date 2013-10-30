@@ -27,6 +27,7 @@ Squid::Application.routes.draw do
   end
   
   resources :tags, only: [:index]
+  resources :events, only: [:show]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
